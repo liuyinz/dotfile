@@ -1,0 +1,21 @@
+--hidden
+--follow
+--trim
+--smart-case
+--auto-hybrid-regex
+--sortr=modified
+--ignore-file=/Users/ray/.config/.rgignore
+--ignore-file=/Users/ray/.gitignore
+
+# ui
+--colors=path:fg:blue
+--colors=path:style:underline
+
+--colors=match:fg:green
+--colors=match:style:bold
+
+--colors=line:fg:yellow
+--colors=line:style:bold
+
+--colors=column:fg:yellow
+--colors=line:style:bold

@@ -1,0 +1,52 @@
+## SEE https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+## SEE https://adangel.org/2020/10/15/github-behind-proxy/
+
+## NOTE
+## tool: brew install nmap nc socat
+## socat only support http proxy, nc support http and socks5.
+## /usr/bin/nc on macos is an early openbsd version, gnu netcat don't support -X proxy
+## https proxy:
+## ProxyCommand ncat -v --proxy-type http --proxy <addr:port> [--proxy-auth <user:pass>] %h %p
+## ProxyCommand nc -X connect -x <addr:port> %h %p
+## ProxyCommand socat - PROXY:<addr>:%h:%p,proxyport=<port>[,proxyauth=<user:pass>]
+## socks proxy:
+## ProxyCommand ncat -v --proxy-type socks5 --proxy <addr:port> [--proxy-auth <user:pass>] %h %p
+## ProxyCommand nc -X 5 -x <addr:port> %h %p
+
+Host *
+  AddKeysToAgent yes
+  IdentityFile ${SSH_KEY_PATH}
+  # IgnoreUnknown UseKeychain
+  # UseKeychain yes
+
+# Host *
+#   ServerAliveInterval 120
+#   IPQoS lowdelay throughput
+
+## -------------------------- Github ------------------------------
+
+# # 默认端口，https代理
+# Host github.com
+#   Hostname github.com
+#   User git
+#   ProxyCommand ncat -v --proxy-type http --proxy ${HTTP} %h %p
+
+# 默认端口，socks5代理
+Host github.com
+  Hostname github.com
+  User git
+  ProxyCommand ncat -v --proxy-type socks5 --proxy ${SOCKS} %h %p
+
+# # 443端口，https代理
+# Host github.com
+#   Hostname ssh.github.com
+#   Port 443
+#   User git
+#   ProxyCommand ncat -v --proxy-type http --proxy ${HTTP} %h %p
+
+# # 443端口，socks5代理
+# Host github.com
+#   Hostname ssh.github.com
+#   Port 443
+#   User git
+#   ProxyCommand ncat -v --proxy-type socks5 --proxy ${SOCKS} %h %p

@@ -1,0 +1,8 @@
+---
+:verbose: true
+:update_sources: true
+:backtrace: false
+:sources:
+- https://mirrors.aliyun.com/rubygems/
+# - https://mirrors.ustc.edu.cn/rubygems/
+# - https://gems.ruby-china.com/

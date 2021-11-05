@@ -1,0 +1,33 @@
+# personal
+/private/var/folders/*
+/var/folders/*
+.Trash/
+Music/
+log/
+Pictures/
+.log/
+.Trash/
+.bundle
+.ipython/
+.sip_v1/
+.subversion/
+.bash_sessions/
+.Library/
+.vscode/
+.cache/
+node_modules/
+npm-global/
+Library/
+tmp/
+.git/
+.CFUserTextEncoding
+.gitflow_export
+.lesshst
+.hushlogin
+.viminfo
+.z
+.z.*
+
+# python
+*.pyc
+*.pyi

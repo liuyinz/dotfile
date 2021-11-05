@@ -1,0 +1,141 @@
+[include]
+	path = ~/.gitconfig.local
+
+[init]
+	defaultBranch = main
+
+[apply]
+	whitespace = nowarn
+
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore
+	quotepath = false
+
+[color]
+	ui = true
+	diff = auto
+	status = auto
+	branch = auto
+
+[color "branch"]
+	current = green bold
+	local = green
+	remote = red
+
+# SEE https://git-scm.com/docs/git-config#Documentation/git-config.txt-color
+[color "diff"]
+	meta = yellow bold
+	frag = blue bold
+	commit = green bold
+	old = red
+	new = green
+	whitespace = red reverse
+
+[color "diff-highlight"]
+	oldNormal = red
+	oldHighlight = black bold red
+	newNormal = green
+	newHighlight = black bold green
+
+[commit]
+	template = ~/.gitmessage
+
+[blame]
+	date = short
+	coloring = repeatedLines
+	blankBoundary = true
+
+[color "blame"]
+	repeatedLines = green
+
+[log]
+	abbrevCommit = true
+	decorate = no
+
+[format]
+	pretty = %Cred%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
+
+[advice]
+	addEmptyPathspec = false
+	addIgnoredFile = false
+	detached = head
+
+[rerere]
+	enabled = true
+
+[diff]
+	ignoreSubmodules = untracked
+[difftool]
+	prompt = false
+
+[merge]
+	conflictStyle = diff3
+[mergetool]
+	keepBackup = false
+	prompt = false
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+
+[push]
+	followTags = True
+
+[pull]
+	rebase = false
+
+[log]
+	abbrevCommit = true
+	decorate = no
+
+[status]
+	submoduleSummary = true
+
+
+## --------------------------- Tool -------------------------------
+
+# diff-so-fancy
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[interactive]
+	diffFilter = (echo && diff-so-fancy)
+[diff-so-fancy]
+	useUnicodeRuler = false
+	rulerWidth = 58
+	changeHunkIndicators = false
+
+# emacsclient
+[core]
+	editor = et
+[diff]
+	tool = edf
+[difftool "edf"]
+	cmd = edf "$LOCAL" "$REMOTE"
+[merge]
+	tool = edf
+[mergetool "edf"]
+	cmd = edf "$MERGED"
+	# cmd = edf "$LOCAL" "$REMOTE" "$MERGED" "$BASE"
+
+# # vscode
+# [core]
+# 	editor = code --wait
+# [diff]
+# 	tool = vscode
+# [difftool "vscode"]
+#     cmd = code --wait --diff $LOCAL $REMOTE
+# [merge]
+#     tool = vscode
+# [mergetool "vscode"]
+#     cmd = code --wait "$MERGED"
+
+## --------------------------- Proxy -------------------------------
+
+# git config --global --unset http.proxy
+# git config --global http.proxy "http://$HTTP"
+
+# [url "https://github.com.cnpmjs.org/"]
+# 	insteadOf = https://github.com/
