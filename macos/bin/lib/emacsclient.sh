@@ -15,7 +15,7 @@ epipe-ensure-p() {
     tmpfile=$(mktemp "/tmp/epipe/$(date +%m%d-%H%M%S)-XXX")
 
     # SEE https://superuser.com/a/380778
-    gsed 's/\x1b\[[0-9;]*[a-zA-Z]//g' | cat >"$tmpfile"
+    sed 's/\x1b\[[0-9;]*[a-zA-Z]//g' | cat >"$tmpfile"
 
     [ ! -s "$tmpfile" ] && unset tmpfile && exit 0
   fi
