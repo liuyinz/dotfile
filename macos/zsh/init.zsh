@@ -210,7 +210,9 @@ command -v pip3 >/dev/null && _evalcache pip3 completion --zsh 2>/dev/null
 command -v starship >/dev/null && _evalcache starship init zsh 2>/dev/null
 
 omz_clean() {
+  echo "remove $ZSH_EVALCACHE_DIR ..."
   rm "$ZSH_EVALCACHE_DIR"/init-*.sh
+  echo "remove $ZSH_COMPDUMP ..."
   rm "$ZSH_COMPDUMP"
 }
 
