@@ -133,11 +133,12 @@ plugins=(
   colored-man-pages
   fzf
   vscode
-  dash
   npm
   cargo
   rustup
+  deno
   jsontools
+  gpg-agent
   # nvm
   ## custom plugins
   zsh-nvm

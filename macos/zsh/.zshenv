@@ -43,9 +43,6 @@ export GIT_PAGER="diff-so-fancy | less --tabs=4 -RFX"
 # ssh
 export SSH_KEY_PATH=$HOME/.ssh/id_ed25519
 
-# gpg
-export GPG_TTY=$TTY
-
 # homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_BUNDLE_BREW_SKIP="daviderestivo/emacs-head/emacs-head@28"
