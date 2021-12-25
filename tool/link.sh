@@ -122,7 +122,7 @@ create_symlinks() {
   for set in "${comb[@]}"; do
 
     print_in_yellow "\n   $set\n\n"
-    printf "    %-9s:  %-30s  =>  %s\n" "Status" "Source" "Target"
+    printf "   %-9s    %-30s      %s\n" "Status" "Source" "Target"
     declare -n dict="$set"
 
     local i=""
@@ -139,20 +139,23 @@ create_symlinks() {
       target="$HOME/${dict[$i]}"
       info="$(printf "%-30s  =>  %s" "$i" "${target/$HOME/\~}")"
 
-      if [ ! -e "$target" ]; then
-        execute "ln -fs $source $target" "New   :  $info"
-
-      elif [ "$(readlink "$target")" == "$source" ]; then
-        print_in_purple "   [!] Same  :  $info\n"
-
+      if [ ! -e "$source" ]; then
+        print_error "Lack  :  $info"
       else
-        ask_for_confirmation "'${target/$HOME/\~}' exists, overwrite it?"
+        if [ ! -e "$target" ]; then
+          execute "ln -fs $source $target" "New   :  $info"
 
-        if answer_is_yes; then
-          mv "$target" "$HOME/.tmp/backup"
-          execute "ln -fs $source $target" "Cover :  $info"
+        elif [ "$(readlink "$target")" == "$source" ]; then
+          print_in_grey "   [✔] Same  :  $info\n"
         else
-          print_error "Keep  :  $info"
+          ask_for_confirmation "'${target/$HOME/\~}' exists, overwrite it?"
+
+          if answer_is_yes; then
+            mv "$target" "$HOME/.tmp/backup"
+            execute "ln -fs $source $target" "Cover :  $info"
+          else
+            print_error "Keep  :  $info"
+          fi
         fi
       fi
 
