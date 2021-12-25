@@ -73,6 +73,9 @@ declare -Ar macos=(
   # ssh
   ["macos/ssh_config"]=".ssh/config"
 
+  # gnupg
+  ["macos/gpg-agent.conf"]=".gnupg/gpg-agent.conf"
+
   # lazygit
   ["base/lazygit.yml"]="Library/Application Support/lazygit/config.yml"
 
