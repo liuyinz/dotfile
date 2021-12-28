@@ -134,8 +134,7 @@ plugins=(
   fzf
   vscode
   npm
-  cargo
-  rustup
+  rust
   deno
   jsontools
   gpg-agent
