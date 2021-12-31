@@ -14,7 +14,7 @@ bindkey -e
 bindkey "^V" clear-screen
 
 #  ------------------ Oh-My-Zsh Installation ----------------------
-export ALL_PROXY=http://$HTTP
+[[ -n $HTTP ]] && export ALL_PROXY=http://$HTTP
 
 export ZSH=$DATA_HOME/oh-my-zsh
 
@@ -97,6 +97,46 @@ ZSH_CACHE_DIR="$CACHE_HOME/oh-my-zsh"
 # Set compdump file
 ZSH_COMPDUMP="$CACHE_HOME/.zcompdump"
 
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+
+plugins=(
+  sudo
+  copydir
+  copyfile
+  encode64
+  extract
+  gh
+  github
+  git-flow-avh
+  colored-man-pages
+  fzf
+  vscode
+  npm
+  rust
+  deno
+  jsontools
+  urltools
+  web-search
+  gpg-agent
+  # nvm
+  ## custom plugins
+  zsh-nvm
+  autoupdate
+  evalcache
+  fzf-collection
+  z.lua
+  zsh-completions
+  fzf-tab
+  zsh-autosuggestions
+  fast-syntax-highlighting
+)
+
+# ---------------------- Plugin Install --------------------------
+
 # function
 plugin_ensure() {
   local repo=https://github.com/$1.git
@@ -120,41 +160,7 @@ plugin_ensure zdharma-continuum/fast-syntax-highlighting
 plugin_ensure TamCore/autoupdate-oh-my-zsh-plugins autoupdate
 plugin_ensure lukechilds/zsh-nvm
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  sudo
-  gh
-  github
-  git-flow-avh
-  colored-man-pages
-  fzf
-  vscode
-  npm
-  rust
-  deno
-  jsontools
-  gpg-agent
-  # nvm
-  ## custom plugins
-  zsh-nvm
-  autoupdate
-  evalcache
-  fzf-collection
-  z.lua
-  zsh-completions
-  fzf-tab
-  zsh-autosuggestions
-  fast-syntax-highlighting
-)
-
-source $ZSH/oh-my-zsh.sh
-
-export ALL_PROXY=
-#  ---------------------- Plugin Setting --------------------------
+# ---------------------- Plugin Setting --------------------------
 
 # zlua, for emacs use
 export ZLUA_SCRIPT
@@ -173,6 +179,12 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
 # autoupdate
 ZSH_CUSTOM_AUTOUPDATE_QUIET=true
+
+# ----------------------- Oh-my-zsh End ---------------------------
+
+source $ZSH/oh-my-zsh.sh
+
+export ALL_PROXY=
 
 #  -------------------------- Options ------------------------------
 
@@ -218,6 +230,6 @@ omz_update() {
   exec zsh
 }
 
-#  ----------------------- Profiler End ---------------------------
+# ----------------------- Profiler End ---------------------------
 
 [[ "$ZSH_PROFILER" == "true" ]] && zprof | less
