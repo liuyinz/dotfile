@@ -28,10 +28,6 @@ alias vi='nvim'
 alias lg='lazygit'
 alias pc="proxychains4"
 
-# Create a folder and move into it in one command
-# -------------------
-mcd() { mkdir -p "$@" && cd "$_" || return; }
-
 #  ---------------------------- Git --------------------------------
 
 # The name of the current branch
@@ -92,6 +88,25 @@ function grename() {
 # Remove .DS_Store files recursively in a directory, default .
 function rmdsstore() {
   find "${@:-.}" -type f -name .DS_Store -delete
+}
+
+#######################################
+# zsh_stats
+# Arguments:
+#   Number: top most used command
+# Outputs:
+#   Lists of commands stats
+#######################################
+
+function zsh_stats {
+  fc -l 1 \
+    | awk '{ CMD[$2]++; count++; } END { for (a in CMD) printf "%d %.2f%% %s\n", CMD[a], CMD[a]*100/count, a }' \
+    | grep -v "./" \
+    | sort -nr \
+    | head -n ${1:-20} \
+    | perl -lane 'printf "%s %s %s %s\n", $F[2], $F[1], $F[0], "▄" x ($F[0] / 5)' \
+    | column -c 1 -s " " -t \
+    | awk '{print " " $0 }'
 }
 
 alias ga='git add'

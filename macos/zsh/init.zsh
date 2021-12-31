@@ -176,24 +176,19 @@ ZSH_CUSTOM_AUTOUPDATE_QUIET=true
 
 #  -------------------------- Options ------------------------------
 
-setopt INC_APPEND_HISTORY
-setopt HIST_FIND_NO_DUPS
-setopt hist_reduce_blanks
-setopt hist_save_no_dups
-setopt bang_hist
 setopt print_exit_value
 setopt PROMPT_SUBST
-setopt inc_append_history_time
-setopt no_inc_append_history
-setopt no_share_history
 setopt AUTO_PUSHD
+
 # match hidden file
 setopt GLOB_DOTS
 
 # hist
+setopt hist_reduce_blanks
+setopt bang_hist
+
 export HISTSIZE=1000000000
 export SAVEHIST=$HISTSIZE
-export HISTTIMEFORMAT="[%F %T] "
 
 # Automatically update PATH entries
 zstyle ':completion:*' rehash true
