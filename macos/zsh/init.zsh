@@ -199,9 +199,6 @@ setopt GLOB_DOTS
 setopt hist_reduce_blanks
 setopt bang_hist
 
-export HISTSIZE=1000000000
-export SAVEHIST=$HISTSIZE
-
 # Automatically update PATH entries
 zstyle ':completion:*' rehash true
 

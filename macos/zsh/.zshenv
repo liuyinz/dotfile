@@ -20,6 +20,11 @@ export TIME_STYLE="+%y-%m-%d %H:%M"
 export PAGER="less --tabs=4"
 export LESSHISTFILE=$CACHE_HOME/.lesshst
 
+# hist
+export HISTFILE=$HOME/.zsh_history
+export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
+
 # PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
