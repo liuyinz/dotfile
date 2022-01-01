@@ -62,6 +62,7 @@ declare -Ar BASE=(
 declare -Ar MACOS=(
   # zsh
   ["macos/zsh/.zshenv"]=".zshenv"
+  ["macos/zsh/.zsh_history"]=".zsh_history"
 
   # SELF
   ["macos/bin"]=".local/bin"
