@@ -13,12 +13,11 @@ fi
 #######################################
 # create_symlinks
 # Outputs:
-# 'Lack'  : New SOURCE not existed
-# 'New'   : New SOURCE symlinked done
-# 'Same'  : Old SOURCE symlinked already
-# 'Cover' : Old TARGET overwrote
-# 'Keep'  : Old TARGET kept
-#
+# SOURCE    TARGET    STATUS
+#  No        No        Lack
+#  Yes       Yes       Same/Cover/Keep
+#  Yes       No        New
+#  No        Yes       New
 #######################################
 
 create_symlinks() {
@@ -40,40 +39,46 @@ create_symlinks() {
     local i=""
     local source=""
     local target=""
+    local cmd=""
     local info=""
 
     for i in "${!dict[@]}"; do
 
       source="$(
         cd ..
-        readlink -e "$i"
+        readlink -m "$i"
       )"
       target="$HOME/${dict[$i]}"
-      info="$(printf "%-30s  =>  %s" "$i" "${target/$HOME/\~}")"
+      cmd="ln -fs $source $target"
+      info="$(printf "%-30s  ->  %s" "$i" "${target/$HOME/\~}")"
 
-      if [ ! -e "$source" ]; then
+      if [ ! -e "$source" ] && [ ! -e "$target" ]; then
         print_error "Lack  :  $info"
-      else
-        if [ ! -e "$target" ]; then
-          execute "ln -fs $source $target" "New   :  $info"
 
-        elif [ "$(readlink "$target")" == "$source" ]; then
+      elif [ -e "$source" ] && [ -e "$target" ]; then
+
+        if [ "$(readlink "$target")" == "$source" ]; then
           print_in_grey "   [✔] Same  :  $info\n"
         else
           ask_for_confirmation "'${target/$HOME/\~}' exists, overwrite it?"
 
           if answer_is_yes; then
             mv "$target" "$HOME/.tmp/backup"
-            execute "ln -fs $source $target" "Cover :  $info"
+            execute "$cmd" "Cover :  $info"
           else
             print_error "Keep  :  $info"
           fi
         fi
+
+      else
+        [ ! -e "$source" ] && mv "$target" "$source"
+        execute "$cmd" "New   :  $info"
       fi
 
     done
 
   done
+
 }
 
 main() {
