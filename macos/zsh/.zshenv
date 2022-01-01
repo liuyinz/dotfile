@@ -94,6 +94,7 @@ export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS=" \
     --header-first \
+    --ansi \
     --reverse \
     --cycle \
     --multi \
