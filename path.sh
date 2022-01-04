@@ -55,6 +55,8 @@ declare -Ar BASE=(
   ["base/.clang-format"]=".clang-format"
   # rust
   ["base/cargo.toml"]=".local/cargo/config"
+  # perl
+  ["base/MyConfig.pm"]=".cpan/CPAN/MyConfig.pm"
 )
 
 # --------------------------- MACOS -------------------------------
