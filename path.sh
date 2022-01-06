@@ -57,6 +57,7 @@ declare -Ar BASE=(
   ["base/cargo.toml"]=".local/cargo/config"
   # perl
   ["base/MyConfig.pm"]=".cpan/CPAN/MyConfig.pm"
+  ["base/.perlcriticrc"]=".perlcriticrc"
 )
 
 # --------------------------- MACOS -------------------------------

@@ -1,0 +1,18 @@
+# SEE https://metacpan.org/pod/Perl::Critic#CONFIGURATION
+
+# severity  = 1
+# only      = 1
+# force     = 0
+verbose   = 4
+# top       = 50
+# theme     = (pbp || security) && bugs
+# include   = NamingConventions ClassHierarchies
+# exclude   = Variables  Modules::RequirePackage
+allow-unsafe = 1                                
+
+# criticism
+criticism-fatal = 1                             
+
+# bin/perlcritic
+pager     = less                                
+color     = 1                                   

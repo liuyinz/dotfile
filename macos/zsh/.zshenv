@@ -154,9 +154,10 @@ export GOPROXY=https://goproxy.cn
 export GOSUMDB=sum.golang.google.cn
 
 # Perl
-export PERL_HOME="$DATA_HOME/perl"
-export PATH="$PERL_HOME/bin${PATH:+:${PATH}}"
-export PERL5LIB="$PERL_HOME/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
-export PERL_LOCAL_LIB_ROOT="$PERL_HOME${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
-export PERL_MB_OPT="--install_base $PERL_HOME"
-export PERL_MM_OPT="INSTALL_BASE=$PERL_HOME"
+export PLENV_ROOT=$DATA_HOME/plenv
+
+export PERL_CPANM_OPT=" \
+       --verbose \
+       --notest \
+       --mirror-only \
+       --mirror https://mirrors.tuna.tsinghua.edu.cn/CPAN/"
