@@ -20,13 +20,16 @@ link: shell
 	@/usr/local/bin/bash $(TOOL_DIR)/link.sh;
 
 brew: homebrew
-	@$(TOOL_DIR)/brew.sh macos/Brewfile
+	@source $(TOOL_DIR)/brew.sh
 
 pip:
-	@$(TOOL_DIR)/pip.sh ~/.tmp/requirements.txt
+	@source $(TOOL_DIR)/pip.sh
 
 npm:
-	@$(TOOL_DIR)/npm.sh ~/.tmp/Npmfile
+	@source $(TOOL_DIR)/npm.sh
+
+hist:
+	@source $(TOOL_DIR)/hist.sh
 
 nvim:
 	@source $(TOOL_DIR)/nvim.sh
@@ -43,6 +46,7 @@ help::
 	$(info make brew         = install or dump package according to Brewfile)
 	$(info make npm          = install or dump package according to Npmfile)
 	$(info make pip          = install or freeze package according to requirements.txt)
+	$(info make hist         = backup or restore zsh history)
 	$(info make nvim         = bootstrap neovim)
 	$(info make emacs        = bootstrap emacs)
 	@true

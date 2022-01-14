@@ -65,7 +65,10 @@ declare -Ar BASE=(
 declare -Ar MACOS=(
   # zsh
   ["macos/zsh/.zshenv"]=".zshenv"
-  ["macos/zsh/.zsh_history"]=".zsh_history"
+  ["macos/zsh/.zsh_history"]=".tmp/.zsh_history"
+
+  # brew
+  ["macos/Brewfile"]=".tmp/Brewfile"
 
   # SELF
   ["macos/bin"]=".local/bin"

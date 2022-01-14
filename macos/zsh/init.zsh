@@ -198,6 +198,7 @@ setopt GLOB_DOTS
 # hist
 setopt hist_reduce_blanks
 setopt bang_hist
+setopt hist_save_no_dups
 
 # Automatically update PATH entries
 zstyle ':completion:*' rehash true

@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+
+cd "$(dirname "${BASH_SOURCE[0]}")" && source "./utils.sh"
+
+_hist_tmp="$HOME/.tmp/.zsh_history"
+
+hist_check() {
+  if [ -z "$HISTFILE" ]; then
+    print_error "HISTFILE: is empty."
+    exit 1
+  fi
+
+  if [ -h "$_hist_tmp" ]; then
+    _hist_src=$(readlink "$_hist_tmp")
+  else
+    print_error "path: $_hist_tmp not linked yet."
+    exit 1
+  fi
+}
+
+hist_size() {
+  wc -c <"$1" 2>/dev/null
+}
+
+hist_cleanup() {
+  perl -i -lane '/:\d+;(.*)$/;$lines{$1}++ || print' "$HISTFILE"
+}
+
+hist_backup() {
+  print_in_yellow "\n   hist: backup start ...\n\n"
+
+  if [ "$HISTFILE" -nt "$_hist_src" ]; then
+    if [ $(hist_size $HISTFILE) -ge $(hist_size $_hist_src) ]; then
+      cp "$HISTFILE" "$_hist_src"
+    fi
+  fi
+
+  print_result $? "hist: backup done"
+}
+
+hist_restore() {
+  print_in_yellow "\n   hist: restore start ...\n\n"
+
+  if [ $(hist_size $HISTFILE) -le $(hist_size $_hist_src) ]; then
+    cp "$_hist_src" "$HISTFILE"
+  fi
+
+  print_result $? "hist: restore done"
+}
+
+#######################################
+# hist_analyze
+# Arguments:
+#   Number: top most used command
+# Outputs:
+#   Analysis of commands history stats
+#######################################
+
+main() {
+
+  hist_check
+
+  print_in_purple "\n hist: option\n\n"
+
+  select opt in backup restore; do
+    case $opt in
+      backup)
+        hist_backup
+        break
+        ;;
+      restore)
+        hist_restore
+        break
+        ;;
+    esac
+  done
+}
+
+main

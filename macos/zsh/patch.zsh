@@ -100,13 +100,15 @@ function rmdsstore() {
 
 function zsh_stats {
   fc -l 1 \
-    | awk '{ CMD[$2]++; count++; } END { for (a in CMD) printf "%d %.2f%% %s\n", CMD[a], CMD[a]*100/count, a }' \
+    | perl -lane '
+$h{$F[1]}++;$count++;END
+{foreach (keys %h) {printf "%s %.2f%% %d\n", $_, ($h{$_}*100/$count), $h{$_};}}' \
     | grep -v "./" \
-    | sort -nr \
-    | head -n ${1:-20} \
-    | perl -lane 'printf "%s %s %s %s\n", $F[2], $F[1], $F[0], "▄" x ($F[0] / 5)' \
-    | column -c 1 -s " " -t \
-    | awk '{print " " $0 }'
+    | sort -nr -k 3 \
+    | head -n ${1:-30} \
+    | perl -lane 'printf "%s %s\n", $_ , "▄" x ($F[2] / 5)' \
+    | column -s " " -t \
+    | perl -pe '$_=" ".$_'
 }
 
 alias ga='git add'
