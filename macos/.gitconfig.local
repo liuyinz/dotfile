@@ -10,12 +10,6 @@
 [http "https://github.com"]
 	proxy = http://127.0.0.1:4780
 
-[https "https://github.com"]
-	proxy = http://127.0.0.1:4780
-
-[http]
-	postBuffer = 524288000
-
 [submodule]
 	fetchJobs = 8
 
