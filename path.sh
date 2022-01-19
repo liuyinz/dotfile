@@ -37,6 +37,8 @@ declare -Ar BASE=(
   ["base/.rgignore"]=".config/.rgignore"
   # ranger
   ["base/ranger"]=".config/ranger"
+  # tealdeer
+  ["base/tealdeer.toml"]=".config/tealdeer/config.toml"
 
   # LANG
   # css, less, scss

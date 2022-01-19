@@ -1,0 +1,39 @@
+[style.description]
+underline = false
+bold = true
+italic = false
+
+[style.command_name]
+foreground = "blue"
+underline = false
+bold = true
+italic = false
+
+[style.example_text]
+foreground = "purple"
+underline = false
+bold = false
+italic = true
+
+[style.example_code]
+foreground = "green"
+bold = false
+underline = false
+italic = false
+
+[style.example_variable]
+foreground = "yellow"
+underline = true
+bold = true
+italic = false
+
+[display]
+compact = false
+use_pager = false
+
+[updates]
+auto_update = true
+auto_update_interval_hours = 120
+
+[directories]
+custom_pages_dir = "~/.config/tealdeer/pages/"
