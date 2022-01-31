@@ -19,7 +19,7 @@ declare -Ar BASE=(
   ["base/starship.toml"]=".config/starship.toml"
 
   # GIT
-  ["base/.gitconfig"]=".gitconfig"
+  ["base/.global.gitconfig"]=".global.gitconfig"
   ["base/.gitmessage"]=".gitmessage"
   ["base/gh.yml"]=".config/gh/config.yml"
 
@@ -75,7 +75,7 @@ declare -Ar MACOS=(
   # SELF
   ["macos/bin"]=".local/bin"
 
-  ["macos/.gitconfig.local"]=".gitconfig.local"
+  ["macos/.gitconfig"]=".gitconfig"
 
   ["macos/.gitignore"]=".gitignore"
 

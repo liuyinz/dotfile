@@ -1,6 +1,3 @@
-[include]
-	path = ~/.gitconfig.local
-
 [init]
 	defaultBranch = main
 
@@ -134,11 +131,3 @@
 #     tool = vscode
 # [mergetool "vscode"]
 #     cmd = code --wait "$MERGED"
-
-## --------------------------- Proxy -------------------------------
-
-# git config --global --unset http.proxy
-# git config --global http.proxy "http://$HTTP"
-
-# [url "https://github.com.cnpmjs.org/"]
-# 	insteadOf = https://github.com/

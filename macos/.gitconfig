@@ -1,5 +1,8 @@
 # git config in Macos
 
+[include]
+	path = ~/.global.gitconfig
+
 [user]
 	name = liuyinz
 	email = liuyinz95@gmail.com
