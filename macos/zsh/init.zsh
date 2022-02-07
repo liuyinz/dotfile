@@ -107,6 +107,7 @@ plugins=(
   sudo
   copydir
   copyfile
+  direnv
   encode64
   extract
   gh
