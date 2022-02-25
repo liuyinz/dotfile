@@ -105,7 +105,7 @@ ZSH_COMPDUMP="$CACHE_HOME/.zcompdump"
 
 plugins=(
   sudo
-  copydir
+  copypath
   copyfile
   direnv
   encode64
