@@ -116,12 +116,6 @@ export FZF_DEFAULT_OPTS=" \
     --bind=ctrl-n:down,ctrl-p:up,alt-n:next-history,alt-p:previous-history \
     --bind=ctrl-u:cancel,ctrl-l:jump,ctrl-t:toggle-all,ctrl-v:clear-selection"
 
-# emacs keg
-export PATH=$CONFIG_HOME/emacs/lib/keg/bin:$PATH
-export KEGPACKAGEARCHIVES="((gnu   . \"http://elpa.zilongshanren.com/gnu/\")
-                            (melpa . \"http://elpa.zilongshanren.com/melpa/\")
-                            (org   . \"http://elpa.zilongshanren.com/org/\"))"
-
 #  --------------------------- Lang -------------------------------
 
 # ccls
