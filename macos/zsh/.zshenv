@@ -93,6 +93,9 @@ export _ZL_HYPHEN=1
 export _ZL_ROOT_MARKERS=".git,.svn,.hg,.root,package.json"
 export _ZL_EXCLUDE_DIRS="$CACHE_HOME,$HOME/Library"
 
+# fzf-proxy
+export PROXYF_URLS="http://127.0.0.1:4780,socks://127.0.0.1:4781"
+
 # fzf
 export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
