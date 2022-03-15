@@ -1,3 +1,4 @@
+language-server
 bash-language-server
 commitizen
 corepack
@@ -23,10 +24,13 @@ stylelint
 typescript-language-server
 typescript
 typestyle
+vim-language-server
 vls
 vscode-css-languageserver-bin
 vscode-html-languageserver-bin
 vscode-json-languageserver
+vscode-langservers-extracted
 vue
 vuepress
 webpack
+zx
