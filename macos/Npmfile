@@ -1,4 +1,6 @@
+eask
 language-server
+vue-language-server
 bash-language-server
 commitizen
 corepack
