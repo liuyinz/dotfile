@@ -44,6 +44,8 @@ export EDITOR="et"
 export GIT_PAGER="diff-so-fancy | less --tabs=4 -RFX"
 
 #  --------------------------- Tool -------------------------------
+# emacs lsp-mode
+export LSP_USE_PLISTS=true
 
 # ssh
 export SSH_KEY_PATH=$HOME/.ssh/id_ed25519
