@@ -93,7 +93,7 @@ export _ZL_ADD_ONCE=0
 export _ZL_MATCH_MODE=0
 export _ZL_HYPHEN=1
 export _ZL_ROOT_MARKERS=".git,.svn,.hg,.root,package.json"
-export _ZL_EXCLUDE_DIRS="$CACHE_HOME,$HOME/Library"
+export _ZL_EXCLUDE_DIRS="$CACHE_HOME"
 
 # fzf-proxy
 export PROXYF_URLS="http://127.0.0.1:4780,socks://127.0.0.1:4781"
