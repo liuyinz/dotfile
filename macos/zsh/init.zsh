@@ -209,7 +209,7 @@ zstyle ':completion:*' list-dirs-first true
 
 source ${${(%):-%x}:A:h}/patch.zsh
 
-command -v pip3 >/dev/null && _evalcache pip3 completion --zsh 2>/dev/null
+command -v pip >/dev/null && _evalcache pip completion --zsh 2>/dev/null
 
 command -v plenv >/dev/null && _evalcache plenv init - zsh 2>/dev/null
 
