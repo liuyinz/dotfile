@@ -83,6 +83,9 @@ export PROXYCHAINS_CONF_FILE=$CONFIG_HOME/proxychains.conf
 # bat
 export BAT_CONFIG_PATH=$CONFIG_HOME/bat.conf
 
+# lazygit
+export CONFIG_DIR="$CONFIG_HOME/lazygit"
+
 # tealdeer
 export TEALDEER_CONFIG_DIR=$CONFIG_HOME/tealdeer
 

@@ -39,6 +39,8 @@ declare -Ar BASE=(
   ["base/ranger"]=".config/ranger"
   # tealdeer
   ["base/tealdeer.toml"]=".config/tealdeer/config.toml"
+  # lazygit
+  ["base/lazygit.yml"]=".config/lazygit/config.yml"
 
   # LANG
   # css, less, scss
@@ -85,9 +87,6 @@ declare -Ar MACOS=(
   # gnupg
   ["macos/gpg-agent.conf"]=".gnupg/gpg-agent.conf"
 
-  # lazygit
-  ["base/lazygit.yml"]="Library/Application Support/lazygit/config.yml"
-
   # py
   ["macos/requirements.txt"]=".tmp/requirements.txt"
 
@@ -108,8 +107,6 @@ declare -Ar MACOS=(
 
 declare -Ar LINUX=(
   ["linux/.gitconfig.local"]=".gitconfig.local"
-
-  ["base/lazygit.yml"]=".config/lazygit/config.yml"
 
   # py
   ["linux/requirements.txt"]=".tmp/requirements.txt"
