@@ -55,8 +55,7 @@ export HOMEBREW_BAT=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_UPGRADE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
-export HOMEBREW_UPDATE_REPORT_ONLY_INSTALLED=1
-export HOMEBREW_BUNDLE_BREW_SKIP="daviderestivo/emacs-head/emacs-head@28"
+export HOMEBREW_BUNDLE_BREW_SKIP="daviderestivo/emacs-head/emacs-head@29"
 
 # curl
 export PATH=/usr/local/opt/curl/bin:$PATH
