@@ -40,7 +40,7 @@ gui:
   # showIcons: false
   # commandLogSize: 8
 
-# git:
+git:
 #   paging:
 #     colorArg: always
 #     useConfig: false
@@ -62,8 +62,8 @@ gui:
 #   skipHookPrefix: WIP
 #   autoFetch: true
 #   autoRefresh: true
-#   branchLogCmd: 'git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --'
-#   allBranchesLogCmd: 'git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium'
+  branchLogCmd: 'git log --graph --color=always --abbrev-commit --date=relative {{branchName}} --'
+  allBranchesLogCmd: 'git log --graph --all --color=always --abbrev-commit --date=relative'
 #   overrideGpg: false # prevents lazygit from spawning a separate process when using GPG
 #   disableForcePushing: false
 #   parseEmoji: false

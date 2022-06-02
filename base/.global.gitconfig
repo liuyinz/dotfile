@@ -50,8 +50,9 @@
 	abbrevCommit = true
 	decorate = no
 
+;; SEE http://git-scm.com/docs/git-log#_pretty_formats
 [format]
-	pretty = %C(magenta)%h%Creset%C(auto)%d%Creset %s  %C(blue)[%an] %C(green)(%cr)%Creset
+	pretty = %C(magenta)%h %C(green)%<(14,trunc)%cr %C(blue)%<(15,trunc)%an%C(auto)%d%Creset %s
 
 [advice]
 	addEmptyPathspec = false
