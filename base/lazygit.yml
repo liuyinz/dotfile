@@ -28,7 +28,7 @@ gui:
     # unstagedChangesColor:
     #   - red
   # commitLength:
-    # show: true
+  # show: true
   # mouseEvents: true
   # skipUnstageLineWarning: false
   # skipStashWarning: false
@@ -41,27 +41,27 @@ gui:
   # commandLogSize: 8
 
 git:
-#   paging:
-#     colorArg: always
-#     useConfig: false
-#   commit:
-#     signOff: false
-#   merging:
-#     # only applicable to unix users
-#     manualCommit: false
-#     # extra args passed to `git merge`, e.g. --no-ff
-#     args: ''
-#   log:
-#     # one of date-order, author-date-order, topo-order.
-#     # topo-order makes it easier to read the git log graph, but commits may not
-#     # appear chronologically. See https://git-scm.com/docs/git-log#_commit_ordering
-#     order: 'topo-order'
-#     # one of always, never, when-maximised
-#     # this determines whether the git graph is rendered in the commits panel
-#     showGraph: 'when-maximised'
-#   skipHookPrefix: WIP
-#   autoFetch: true
-#   autoRefresh: true
+  #   paging:
+  #     colorArg: always
+  #     useConfig: false
+  #   commit:
+  #     signOff: false
+  #   merging:
+  #     # only applicable to unix users
+  #     manualCommit: false
+  #     # extra args passed to `git merge`, e.g. --no-ff
+  #     args: ''
+  #   log:
+  #     # one of date-order, author-date-order, topo-order.
+  #     # topo-order makes it easier to read the git log graph, but commits may not
+  #     # appear chronologically. See https://git-scm.com/docs/git-log#_commit_ordering
+  #     order: 'topo-order'
+  #     # one of always, never, when-maximised
+  #     # this determines whether the git graph is rendered in the commits panel
+  #     showGraph: 'when-maximised'
+  #   skipHookPrefix: WIP
+  #   autoFetch: true
+  #   autoRefresh: true
   branchLogCmd: 'git log --graph --color=always --abbrev-commit --date=relative {{branchName}} --'
   allBranchesLogCmd: 'git log --graph --all --color=always --abbrev-commit --date=relative'
 #   overrideGpg: false # prevents lazygit from spawning a separate process when using GPG
