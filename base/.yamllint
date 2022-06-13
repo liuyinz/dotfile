@@ -1,0 +1,14 @@
+---
+extends: default
+
+# https://yamllint.readthedocs.io/en/stable/rules.html#module-yamllint.rules.comments_indentation
+# compatible with prettier
+rules:
+  braces:
+    min-spaces-inside: 1
+    max-spaces-inside: 1
+  comments:
+    min-spaces-from-content: 1
+  comments-indentation: disable
+  document-start: disable
+  line-length: disable

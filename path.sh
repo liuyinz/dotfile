@@ -48,6 +48,8 @@ declare -Ar BASE=(
   # js
   ["base/.prettierrc.json"]=".prettierrc.json"
   # .eslintrc.json: base/.eslintrc.json
+  # yaml
+  ["base/.yamllint"]=".yamllint"
   # py
   ["base/pip.conf"]=".config/pip/pip.conf"
   ["base/.pylintrc"]=".pylintrc"
