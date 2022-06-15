@@ -16,7 +16,6 @@ alias df="df -h"
 alias ap="ALL_PROXY=http://$HTTP"
 alias eap="export ALL_PROXY=http://$HTTP"
 alias uap="export ALL_PROXY="
-# alias ssha='ssh root@157.245.125.95'
 
 # App
 # -----------------------
@@ -26,6 +25,7 @@ alias rr="ranger"
 alias vi='nvim'
 alias lg='lazygit'
 alias pc="proxychains4"
+alias h="htop"
 
 # Remove .DS_Store files recursively in a directory, default .
 function rmdsstore() {
