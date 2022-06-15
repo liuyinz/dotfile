@@ -62,14 +62,14 @@ main() {
 
   print_in_purple "\n hist: option\n\n"
 
-  select opt in backup restore; do
+  select opt in restore backup; do
     case $opt in
-      backup)
-        hist_backup
-        break
-        ;;
       restore)
         hist_restore
+        break
+        ;;
+      backup)
+        hist_backup
         break
         ;;
     esac
