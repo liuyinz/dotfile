@@ -104,25 +104,25 @@ ZSH_COMPDUMP="$CACHE_HOME/.zcompdump"
 # Add wisely, as too many plugins slow down shell startup.
 
 plugins=(
-  sudo
-  copypath
+  colored-man-pages
   copyfile
+  copypath
+  deno
   direnv
   encode64
   extract
+  fzf
   gh
   github
   git-flow-avh
-  colored-man-pages
-  fzf
-  vscode
+  gpg-agent
+  jsontools
   npm
   rust
-  deno
-  jsontools
+  sudo
   urltools
+  vscode
   web-search
-  gpg-agent
   # nvm
   ## custom plugins
   zsh-nvm
