@@ -111,14 +111,15 @@ export FZF_DEFAULT_OPTS=" \
     --multi \
     --sort \
     --history=$CACHE_HOME/.fzf_history \
-    --marker='*' \
+    --marker='+ ' \
     --info=inline\
     --margin=0,0,0,1 \
     --height='60%' \
-    --color=dark,bg:#1d252c,fg:#a0b3c5:dim,hl:#8bd49c:bold \
-    --color=fg+:#d8dde6,bg+:#20282f,hl+:#8bd49c:bold,pointer:#d95468:bold \
-    --color=gutter:#1d252c,marker:#d95468:bold,header:#5ec4ff:dim \
-    --color=prompt:#5ec4ff:dim,query:#8bd49c:bold,spinner:#ebbf83:dim,info:#c06ece:bold \
+    --color=dark,bg:#1d252c,fg:#a0b3c5:dim,hl:#8bd49c:dim:bold \
+    --color=bg+:#1d252c,fg+:#d8dde6:bold,hl+:#d8dde6:bold \
+    --color=pointer:#d95468:bold,gutter:#1d252c,marker:#d95468:bold \
+    --color=prompt:#5ec4ff:dim,query:#8bd49c:bold,spinner:#ebbf83:dim \
+    --color=info:#c06ece:bold,header:#5ec4ff:dim \
     --bind=change:first,btab:up+toggle \
     --bind=ctrl-n:down,ctrl-p:up,alt-n:next-history,alt-p:previous-history \
     --bind=ctrl-u:cancel,ctrl-l:jump,ctrl-t:toggle-all,ctrl-v:clear-selection"
