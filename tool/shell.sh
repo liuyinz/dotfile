@@ -40,11 +40,13 @@ zshrc_init() {
   if [ ! -e ~/.zshrc ]; then
     print_in_yellow "zshrc: init start ..."
     # shellcheck disable=SC2016
-    echo 'Adding line to .zshrc: source $DOTFILE_HOME/macos/zsh/init.zsh'
-    # shellcheck disable=SC2016
     echo '## Uncomment line below to start zsh profiler
 
 # ZSH_PROFILER="true"
+
+# proxy
+export HTTP=
+export SOCKS=
 
 source $DOTFILE_HOME/macos/zsh/init.zsh' >>"$HOME/.zshrc"
   fi

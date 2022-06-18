@@ -30,18 +30,14 @@ export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=$DATA_HOME/bin:$PATH
 
-# proxy
-export SOCKS=127.0.0.1:4781
-export HTTP=127.0.0.1:4780
-
-export HTTP_ADDR=${HTTP%:*}
-export HTTP_PORT=${HTTP#*:}
-export SOCKS_ADDR=${SOCKS%:*}
-export SOCKS_PORT=${SOCKS#*:}
-
 # export EDITOR="nvim"
 export EDITOR="et"
 export GIT_PAGER="diff-so-fancy | less --tabs=4 -RFX"
+
+# export HTTP_ADDR=${HTTP%:*}
+# export HTTP_PORT=${HTTP#*:}
+# export SOCKS_ADDR=${SOCKS%:*}
+# export SOCKS_PORT=${SOCKS#*:}
 
 #  --------------------------- Tool -------------------------------
 # emacs lsp-mode
@@ -98,7 +94,7 @@ export _ZL_ROOT_MARKERS=".git,.svn,.hg,.root,package.json"
 export _ZL_EXCLUDE_DIRS="$CACHE_HOME"
 
 # fzf-proxy
-export PROXYF_URLS="http://127.0.0.1:4780,socks://127.0.0.1:4781"
+[[ -n $HTTP ]] && export PROXYF_URLS="http://$HTTP,socks://$SOCKS"
 
 # fzf
 export FZF_DEFAULT_COMMAND='rg --files'
