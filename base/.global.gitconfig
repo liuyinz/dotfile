@@ -64,6 +64,8 @@
 
 [diff]
 	ignoreSubmodules = untracked
+	submodule = log
+
 [difftool]
 	prompt = false
 

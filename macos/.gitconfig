@@ -2,24 +2,17 @@
 
 [include]
 	path = ~/.global.gitconfig
-
-[user]
-	name = liuyinz
-	email = liuyinz95@gmail.com
+	path = ~/.local.gitconfig
 
 [credential]
 	helper = osxkeychain
 
-[http "https://github.com"]
-	proxy = http://127.0.0.1:4780
+[user]
+	name = liuyinz
+	email = liuyinz95@gmail.com
 
 [submodule]
 	fetchJobs = 8
 
 [github]
 	user = liuyinz
-
-[diff]
-	submodule = log
-[init]
-	defaultBranch = main
