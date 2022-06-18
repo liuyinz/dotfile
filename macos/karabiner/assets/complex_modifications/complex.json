@@ -1,5 +1,5 @@
 {
-  "title": "自用",
+  "title": "Self-defined",
   "rules": [
     {
       "description": "ctrl-M to return",
@@ -11,6 +11,71 @@
             "modifiers": { "mandatory": ["control"] }
           },
           "to": [{ "key_code": "return_or_enter" }]
+        }
+      ]
+    },
+    {
+      "description": "Double tap left_shift to Command+Control+t",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_shift",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "t",
+              "modifiers": ["left_command", "left_control"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_shift pressed",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_shift",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "left_shift pressed",
+                "value": 1
+              }
+            },
+            {
+              "key_code": "left_shift"
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "left_shift pressed",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "left_shift pressed",
+                  "value": 0
+                }
+              }
+            ]
+          }
         }
       ]
     }
