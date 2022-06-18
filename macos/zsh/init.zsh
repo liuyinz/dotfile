@@ -181,6 +181,9 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 # autoupdate
 ZSH_CUSTOM_AUTOUPDATE_QUIET=true
 
+# # fzf-proxy
+# [[ -n $HTTP ]] && export PROXYF_URLS="http://$HTTP,socks://$SOCKS"
+
 # ----------------------- Oh-my-zsh End ---------------------------
 
 source $ZSH/oh-my-zsh.sh
