@@ -59,7 +59,7 @@ hist_restore() {
 main() {
 
   hist_check
-  
+
   hist_cleanup
 
   print_in_purple "\n hist: option\n\n"
