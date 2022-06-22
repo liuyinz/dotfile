@@ -2,7 +2,7 @@
 
 cd "$(dirname "${BASH_SOURCE[0]}")" && source "./utils.sh"
 
-_hist_tmp="$HOME/.tmp/.zsh_history"
+_hist_cache="$HOME/$dotcache/.zsh_history"
 
 hist_check() {
   if [ -z "$HISTFILE" ]; then
@@ -10,10 +10,10 @@ hist_check() {
     exit 1
   fi
 
-  if [ -h "$_hist_tmp" ]; then
-    _hist_src=$(readlink "$_hist_tmp")
+  if [ -h "$_hist_cache" ]; then
+    _hist_src=$(readlink "$_hist_cache")
   else
-    print_error "path: $_hist_tmp not linked yet."
+    print_error "path: $_hist_cache not linked yet."
     exit 1
   fi
 }
@@ -30,7 +30,7 @@ hist_backup() {
   print_in_yellow "\n   hist: backup start ...\n\n"
 
   if [ "$HISTFILE" -nt "$_hist_src" ]; then
-    if [ $(hist_size $HISTFILE) -ge $(hist_size $_hist_src) ]; then
+    if [ "$(hist_size "$HISTFILE")" -ge "$(hist_size "$_hist_src")" ]; then
       cp "$HISTFILE" "$_hist_src"
     fi
   fi
@@ -41,7 +41,7 @@ hist_backup() {
 hist_restore() {
   print_in_yellow "\n   hist: restore start ...\n\n"
 
-  if [ $(hist_size $HISTFILE) -le $(hist_size $_hist_src) ]; then
+  if [ "$(hist_size "$HISTFILE")" -le "$(hist_size "$_hist_src")" ]; then
     cp "$_hist_src" "$HISTFILE"
   fi
 
@@ -59,6 +59,8 @@ hist_restore() {
 main() {
 
   hist_check
+  
+  hist_cleanup
 
   print_in_purple "\n hist: option\n\n"
 

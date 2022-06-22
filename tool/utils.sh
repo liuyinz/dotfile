@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+dotcache=".cache/dotfile"
+
 answer_is_yes() {
     [[ "$REPLY" =~ ^[Yy]$ ]] \
         && return 0 \

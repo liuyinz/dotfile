@@ -22,7 +22,7 @@ clone_emacs() {
   local emacs_dir="$HOME/.config/emacs"
 
   if [[ ! -d "$emacs_dir/.git" ]]; then
-    [ -d "$emacs_dir" ] && mv "$emacs_dir" ~/.tmp/backup/
+    [ -d "$emacs_dir" ] && mv "$emacs_dir" "$HOME/$dotcache/backup/"
     print_in_yellow "   emacs-head@28: clone start ...\n\n"
     command git clone https://github.com/liuyinz/emacs.d.git "$emacs_dir"
   fi

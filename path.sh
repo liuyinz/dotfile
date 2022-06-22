@@ -71,10 +71,10 @@ declare -Ar BASE=(
 declare -Ar MACOS=(
   # zsh
   ["macos/zsh/.zshenv"]=".zshenv"
-  ["macos/zsh/.zsh_history"]=".tmp/.zsh_history"
+  ["macos/zsh/.zsh_history"]="$dotcache/.zsh_history"
 
   # brew
-  ["macos/Brewfile"]=".tmp/Brewfile"
+  ["macos/Brewfile"]="$dotcache/Brewfile"
 
   # SELF
   ["macos/bin"]=".local/bin"
@@ -90,10 +90,10 @@ declare -Ar MACOS=(
   ["macos/gpg-agent.conf"]=".gnupg/gpg-agent.conf"
 
   # py
-  ["macos/requirements.txt"]=".tmp/requirements.txt"
+  ["macos/requirements.txt"]="$dotcache/requirements.txt"
 
   # npm
-  ["macos/Npmfile"]=".tmp/Npmfile"
+  ["macos/Npmfile"]="$dotcache/Npmfile"
 
   # proxychain
   ["macos/proxychains.conf"]=".config/proxychains.conf"
@@ -111,8 +111,8 @@ declare -Ar LINUX=(
   ["linux/.gitconfig.local"]=".gitconfig.local"
 
   # py
-  ["linux/requirements.txt"]=".tmp/requirements.txt"
+  ["linux/requirements.txt"]="$dotcache/requirements.txt"
 
   # npm
-  ["linux/Npmfile"]=".tmp/Npmfile"
+  ["linux/Npmfile"]="$dotcache/Npmfile"
 )

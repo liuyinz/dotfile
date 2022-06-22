@@ -2,7 +2,7 @@
 
 cd "$(dirname "${BASH_SOURCE[0]}")" && source "./utils.sh"
 
-_npm_tmp="$HOME/.tmp/Npmfile"
+_npm_cache="$HOME/$dotfile_cache/Npmfile"
 
 npm_check() {
   if ! cmd_exists "npm"; then
@@ -10,8 +10,8 @@ npm_check() {
     exit 1
   fi
 
-  if [ ! -h "$_npm_tmp" ]; then
-    print_error "path: $_npm_tmp not linked yet."
+  if [ ! -h "$_npm_cache" ]; then
+    print_error "path: $_npm_cache not linked yet."
     exit 1
   fi
 
@@ -19,7 +19,7 @@ npm_check() {
 
 npm_install() {
   print_in_yellow "\n   npm: install start ...\n\n"
-  cat "$_npm_tmp" | xargs npm install --global
+  cat "$_npm_cache" | xargs npm install --global
   print_result $? "npm: install done"
 }
 
@@ -27,7 +27,7 @@ npm_dump() {
   print_in_yellow "\n   npm: dump start ...\n\n"
   npm list -g --depth 0 --parseable \
     | tail -n +2 \
-    | perl -F'/' -lne 'print $F[-1]' >"$_npm_tmp"
+    | perl -F'/' -lne 'print $F[-1]' >"$_npm_cache"
   print_result $? "npm: dump done"
 }
 

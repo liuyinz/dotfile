@@ -2,11 +2,11 @@
 
 cd "$(dirname "${BASH_SOURCE[0]}")" && source "./utils.sh"
 
-_brew_tmp="$HOME/.tmp/Brewfile"
+_brew_cache="$HOME/$dotcache/Brewfile"
 
 brewfile_check() {
-  if [ ! -h "$_brew_tmp" ]; then
-    print_error "path: $_brew_tmp not linked yet."
+  if [ ! -h "$_brew_cache" ]; then
+    print_error "path: $_brew_cache not linked yet."
     exit 1
   fi
 }
@@ -17,13 +17,13 @@ brew_install() {
   # exclude emacs-head
   HOMEBREW_BUNDLE_BREW_SKIP="daviderestivo/emacs-head/emacs-head@28"
 
-  brew bundle install --no-lock --file "$_brew_tmp"
+  brew bundle install --no-lock --file "$_brew_cache"
   print_result $? "brew: install done"
 }
 
 brew_dump() {
   print_in_yellow "\n   brew: dump start ...\n\n"
-  brew bundle dump --no-lock --force --file "$_brew_tmp"
+  brew bundle dump --no-lock --force --file "$_brew_cache"
   print_result $? "brew: dump done"
 }
 

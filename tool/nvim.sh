@@ -16,7 +16,7 @@ nvim_clone() {
   local nvim_dir="$HOME/.config/nvim"
 
   if [[ ! -d "$nvim_dir/.git" ]]; then
-    [ -d "$nvim_dir" ] && mv "$nvim_dir" ~/.tmp/backup/
+    [ -d "$nvim_dir" ] && mv "$nvim_dir" "$HOME/$dotcache/backup/"
     print_in_yellow "   nvim: clone start ...\n\n"
     command git clone https://github.com/liuyinz/nvim.git "$nvim_dir"
   fi

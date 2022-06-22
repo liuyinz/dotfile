@@ -63,7 +63,7 @@ create_symlinks() {
           ask_for_confirmation "'${target/$HOME/\~}' exists, overwrite it?"
 
           if answer_is_yes; then
-            mv "$target" "$HOME/.tmp/backup"
+            mv "$target" "$HOME/$dotcache/backup"
             execute "$cmd" "Cover :  $info"
           else
             print_error "Keep  :  $info"
@@ -84,7 +84,7 @@ create_symlinks() {
 
 main() {
   print_in_purple "\n   link: backup check ...\n\n"
-  mkd "$HOME/.tmp/backup"
+  mkd "$HOME/$dotcache/backup"
 
   print_in_purple "\n   link: symbolic check ...\n"
   create_symlinks
