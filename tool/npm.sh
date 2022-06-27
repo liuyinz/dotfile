@@ -2,13 +2,13 @@
 
 cd "$(dirname "${BASH_SOURCE[0]}")" && source "./utils.sh"
 
-_npm_cache="$HOME/$dotfile_cache/Npmfile"
+_npm_cache="$HOME/$dotcache/Npmfile"
 
 npm_check() {
   if ! cmd_exists "npm"; then
     print_error "npm: " "cannot found"
-    exit 1
-  fi
+    exit 1 
+ fi
 
   if [ ! -h "$_npm_cache" ]; then
     print_error "path: $_npm_cache not linked yet."
