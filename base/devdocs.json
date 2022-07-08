@@ -1,0 +1,7 @@
+{
+  "hideIntro": "1",
+  "analyticsConsent": "1",
+  "arrowScroll": "1",
+  "docs": "bash/bootstrap~5/c/css/d3~7/deno/elisp/esbuild/eslint/gcc~12/go/homebrew/html/http/javascript/jq/less~4/lua~5.4/lua~5.3/node/npm/perl~5.36/python~3.10/react/ruby~3.1/rust/sass/tailwindcss/terraform/typescript/vite/vue~3/dom/webpack~5",
+  "layout": "_sidebar-hidden"
+}
