@@ -31,7 +31,7 @@ export PATH=/usr/local/bin:$PATH
 export PATH=$DATA_HOME/bin:$PATH
 
 # export EDITOR="nvim"
-export EDITOR="et"
+export EDITOR="ec"
 export GIT_PAGER="diff-so-fancy | less --tabs=4 -RFX"
 
 # export HTTP_ADDR=${HTTP%:*}

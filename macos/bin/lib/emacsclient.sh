@@ -24,5 +24,5 @@ epipe-ensure-p() {
 etest() {
   emacsclient -u -s test -e "(server-running-p)" 2>/dev/null \
     || emacs -Q --daemon=test --load ~/.config/emacs/core/init-test.el
-  emacsclient -q -s test -t "$@"
+  emacsclient -q -s test -c "$@"
 }

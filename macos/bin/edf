@@ -30,6 +30,6 @@ case "${#}" in
     ;;
 esac
 
-emacsclient -q -t -e "(${EVAL})" 2>&1
+emacsclient -q -c -e "(${EVAL})" 2>&1
 
 exit $?

@@ -112,7 +112,7 @@
 
 # emacsclient
 [core]
-	editor = et
+	editor = ec
 [diff]
 	tool = edf
 [difftool "edf"]
