@@ -8,6 +8,7 @@ gui:
   # expandFocusedSidePanel: false
   # mainPanelSplitMode: 'flexible' # one of 'horizontal' | 'flexible' | 'vertical'
   # language: 'auto' # one of 'auto' | 'en' | 'zh' | 'pl' | 'nl' | 'ja'
+  timeFormat: '2006-01-02 15:04'
   theme:
     # lightTheme: false # For terminals with a light background
     activeBorderColor:
@@ -35,39 +36,41 @@ gui:
   # showFileTree: true # for rendering changes files in a tree format
   # showListFooter: true # for seeing the '5 of 20' message in list panels
   showRandomTip: false
-  # showBottomLine: true # for hiding the bottom information line (unless it has important information to tell you)
+  showBottomLine: false # for hiding the bottom information line (unless it has important information to tell you)
   showCommandLog: false
   # showIcons: false
   # commandLogSize: 8
 
 git:
-  #   paging:
-  #     colorArg: always
-  #     useConfig: false
-  #   commit:
-  #     signOff: false
-  #   merging:
-  #     # only applicable to unix users
-  #     manualCommit: false
-  #     # extra args passed to `git merge`, e.g. --no-ff
-  #     args: ''
-  #   log:
-  #     # one of date-order, author-date-order, topo-order.
-  #     # topo-order makes it easier to read the git log graph, but commits may not
-  #     # appear chronologically. See https://git-scm.com/docs/git-log#_commit_ordering
-  #     order: 'topo-order'
-  #     # one of always, never, when-maximised
-  #     # this determines whether the git graph is rendered in the commits panel
-  #     showGraph: 'when-maximised'
-  #   skipHookPrefix: WIP
-  #   autoFetch: true
-  #   autoRefresh: true
-  branchLogCmd: 'git log --graph --color=always --abbrev-commit --date=relative {{branchName}} --'
-  allBranchesLogCmd: 'git log --graph --all --color=always --abbrev-commit --date=relative'
-#   overrideGpg: false # prevents lazygit from spawning a separate process when using GPG
-#   disableForcePushing: false
-#   parseEmoji: false
-#   diffContextSize: 3 # how many lines of context are shown around a change in diffs
+  # paging:
+  #   colorArg: always
+  #   useConfig: false
+  # commit:
+  #   signOff: false
+  # merging:
+  #   # only applicable to unix users
+  #   manualCommit: false
+  #   # extra args passed to `git merge`, e.g. --no-ff
+  #   args: ''
+  # log:
+  #   # one of date-order, author-date-order, topo-order.
+  #   # topo-order makes it easier to read the git log graph, but commits may not
+  #   # appear chronologically. See https://git-scm.com/docs/git-log#_commit_ordering
+  #   order: 'topo-order'
+  # one of always, never, when-maximised
+  # this determines whether the git graph is rendered in the commits panel
+  showGraph: 'always'
+  # displays the whole git graph by default in the commits panel (equivalent to passing the `--all` argument to `git log`)
+  # showWholeGraph: false
+  # skipHookPrefix: WIP
+  # autoFetch: true
+  # autoRefresh: true
+  branchLogCmd: 'git log --color=always --abbrev-commit --date=relative {{branchName}} --'
+  allBranchesLogCmd: 'git log --all --color=always --abbrev-commit --date=relative'
+  # overrideGpg: false # prevents lazygit from spawning a separate process when using GPG
+  # disableForcePushing: false
+  # parseEmoji: false
+  # diffContextSize: 3 # how many lines of context are shown around a change in diffs
 
 os:
   editCommand: 'et' # see 'Configuring File Editing' section
@@ -130,26 +133,26 @@ keybinding:
     # scrollDownMain-alt2: '<c-d>' # main panel scroll down
     # executeCustomCommand: ':'
     # createRebaseOptionsMenu: 'm'
-  #   pushFiles: 'P'
-  #   pullFiles: 'p'
-  #   refresh: 'R'
-  #   createPatchOptionsMenu: '<c-p>'
-  #   nextTab: ']'
-  #   prevTab: '['
-  #   nextScreenMode: '+'
-  #   prevScreenMode: '_'
-  #   undo: 'z'
-  #   redo: '<c-z>'
-  #   filteringMenu: '<c-s>'
-  #   diffingMenu: 'W'
-  #   diffingMenu-alt: '<c-e>' # deprecated
-  #   copyToClipboard: '<c-o>'
-  #   submitEditorText: '<enter>'
-  #   appendNewline: '<a-enter>'
-  #   extrasMenu: '@'
-  #   toggleWhitespaceInDiffView: '<c-w>'
-  #   increaseContextInDiffView: '}'
-  #   decreaseContextInDiffView: '{'
+    # pushFiles: 'P'
+    # pullFiles: 'p'
+    # refresh: 'R'
+    # createPatchOptionsMenu: '<c-p>'
+    # nextTab: ']'
+    # prevTab: '['
+    # nextScreenMode: '+'
+    # prevScreenMode: '_'
+    # undo: 'z'
+    # redo: '<c-z>'
+    # filteringMenu: '<c-s>'
+    # diffingMenu: 'W'
+    # diffingMenu-alt: '<c-e>' # deprecated
+    # copyToClipboard: '<c-o>'
+    # submitEditorText: '<enter>'
+    # appendNewline: '<a-enter>'
+    # extrasMenu: '@'
+    # toggleWhitespaceInDiffView: '<c-w>'
+    # increaseContextInDiffView: '}'
+    # decreaseContextInDiffView: '{'
   # status:
   #   checkForUpdate: 'u'
   #   recentRepos: '<enter>'
