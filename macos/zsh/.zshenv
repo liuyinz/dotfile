@@ -127,8 +127,9 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 export GEM_HOME=$DATA_HOME/gem
 export PATH=$GEM_HOME/bin:$PATH
 
-# pip
-export PYTHONUSERBASE=$DATA_HOME/python/3.9
+# python
+export PYTHON_MINOR_VERSION=$(python -V | perl -nle '/^Python (\d\.\d+)\..+$/ && print "$1"')
+export PYTHONUSERBASE=$DATA_HOME/python/$PYTHON_MINOR_VERSION
 export PATH=$PYTHONUSERBASE/bin:$PATH
 
 # rust
