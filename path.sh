@@ -52,7 +52,6 @@ declare -Ar BASE=(
   ["base/.yamllint"]=".yamllint"
   # py
   ["base/pip.conf"]=".config/pip/pip.conf"
-  ["base/.pylintrc"]=".pylintrc"
   # ruby
   ["base/.gemrc"]=".gemrc"
   # sh
