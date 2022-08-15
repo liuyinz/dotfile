@@ -113,6 +113,7 @@ plugins=(
   extract
   fzf
   gh
+  gitfast
   github
   git-flow-avh
   gpg-agent
