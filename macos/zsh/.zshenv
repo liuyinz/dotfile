@@ -8,7 +8,6 @@
 # default
 export CONFIG_HOME=$HOME/.config
 export CACHE_HOME=$HOME/.cache
-export DATA_HOME=$HOME/.local
 
 # dotfile
 export DOTFILE_HOME=$CONFIG_HOME/dotfile
@@ -28,7 +27,7 @@ export SAVEHIST=$HISTSIZE
 # PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
-export PATH=$DATA_HOME/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # export EDITOR="nvim"
 export EDITOR="ec"
@@ -124,23 +123,18 @@ export PATH=/usr/local/opt/llvm/bin:$PATH
 
 # Ruby
 export PATH=/usr/local/opt/ruby/bin:$PATH
-export GEM_HOME=$DATA_HOME/gem
-export PATH=$GEM_HOME/bin:$PATH
+export PATH=$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH
 
 # python
-export PYTHON_MINOR_VERSION=$(python -V | perl -nle '/^Python (\d\.\d+)\..+$/ && print "$1"')
-export PYTHONUSERBASE=$DATA_HOME/python/$PYTHON_MINOR_VERSION
-export PATH=$PYTHONUSERBASE/bin:$PATH
+export PATH=$(python -m site --user-base)/bin:$PATH
 
 # rust
-export CARGO_HOME=$DATA_HOME/cargo
-export PATH=$CARGO_HOME/bin:$PATH
+export PATH="$HOME/.cargo/bin:$PATH"
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
 # zsh-nvm
 export NVM_NODEJS_ORG_MIRROR="https://mirrors.ustc.edu.cn/node/"
-export NVM_DIR=$DATA_HOME/nvm
 export NVM_LAZY_LOAD=true
 export NVM_LAZY_LOAD_EXTRA_COMMANDS=('make' 'vim' 'emacs' 'et' 'ecc' 'ec' 'edf')
 export NVM_AUTO_USE=true
@@ -152,12 +146,3 @@ export PATH=$GOPATH/bin:$PATH
 export GO111MODULE=on
 export GOPROXY=https://goproxy.cn
 export GOSUMDB=sum.golang.google.cn
-
-# Perl
-export PLENV_ROOT=$DATA_HOME/plenv
-
-export PERL_CPANM_OPT=" \
-       --verbose \
-       --notest \
-       --mirror-only \
-       --mirror https://mirrors.tuna.tsinghua.edu.cn/CPAN/"

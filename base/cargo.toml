@@ -1,5 +1,5 @@
 [source.crates-io]
-replace-with = 'ustc'
+replace-with = 'tuna'
 registry = "https://github.com/rust-lang/crates.io-index"
 
 [source.tuna]

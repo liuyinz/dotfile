@@ -16,7 +16,7 @@ bindkey "^V" clear-screen
 #  ------------------ Oh-My-Zsh Installation ----------------------
 [[ -n $HTTP ]] && export ALL_PROXY=http://$HTTP
 
-export ZSH=$DATA_HOME/oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 if [[ ! -f $ZSH/oh-my-zsh.sh ]]; then
   echo "Installing OhMyZsh/ohmyzsh..."
