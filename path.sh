@@ -60,9 +60,9 @@ declare -Ar BASE=(
   ["base/.clang-format"]=".clang-format"
   # rust
   ["base/cargo.toml"]=".cargo/config"
-  # perl
-  ["base/MyConfig.pm"]=".cpan/CPAN/MyConfig.pm"
-  ["base/.perlcriticrc"]=".perlcriticrc"
+  ## perl
+  # ["base/MyConfig.pm"]=".cpan/CPAN/MyConfig.pm"
+  # ["base/.perlcriticrc"]=".perlcriticrc"
 )
 
 # --------------------------- MACOS -------------------------------
