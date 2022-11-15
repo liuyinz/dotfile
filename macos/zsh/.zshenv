@@ -104,6 +104,7 @@ export FZF_DEFAULT_OPTS=" \
     --sort \
     --history=$CACHE_HOME/.fzf_history \
     --marker='+ ' \
+    --separator='' \
     --info=inline\
     --margin=0,0,0,1 \
     --height='60%' \
