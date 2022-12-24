@@ -124,6 +124,7 @@ plugins=(
   urltools
   vscode
   web-search
+  pass
   # nvm
   ## custom plugins
   zsh-nvm
