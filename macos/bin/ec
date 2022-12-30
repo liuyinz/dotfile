@@ -5,7 +5,9 @@ source "$(dirname "$(realpath "${BASH_SOURCE[0]}" 2>/dev/null)")/lib/emacsclient
 epipe-ensure-p "$@"
 emacsclient-ensure-p
 emacsclient -q -e "(defun gui-frame-list ()
-                       (seq-filter (lambda (f) (frame-parameter f 'display))
+                       (seq-filter (lambda (f)
+                                   (and (frame-parameter f 'display)
+                                        (null (frame-parameter f 'parent-frame))))
                                    (frame-list)))" &>/dev/null
 
 # prevent creating another X frame if there is at least one present.
