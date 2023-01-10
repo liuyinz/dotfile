@@ -125,6 +125,7 @@ plugins=(
   vscode
   web-search
   pass
+  qrcode
   # nvm
   ## custom plugins
   zsh-nvm
