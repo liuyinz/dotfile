@@ -107,7 +107,7 @@ declare -Ar MACOS=(
 # --------------------------- LINUX -------------------------------
 
 declare -Ar LINUX=(
-  ["linux/.gitconfig.local"]=".gitconfig.local"
+  ["linux/.gitconfig"]=".gitconfig"
 
   # py
   ["linux/requirements.txt"]="$dotcache/requirements.txt"
