@@ -103,6 +103,7 @@ export FZF_DEFAULT_OPTS=" \
     --cycle \
     --multi \
     --sort \
+    --no-scrollbar \
     --history=$CACHE_HOME/.fzf_history \
     --marker='+ ' \
     --separator='' \
