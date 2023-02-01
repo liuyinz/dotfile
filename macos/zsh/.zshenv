@@ -124,7 +124,8 @@ export PATH=/usr/local/opt/llvm/bin:$PATH
 
 # Ruby
 export PATH=/usr/local/opt/ruby/bin:$PATH
-export PATH=$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export PATH="$GEM_HOME/bin:$PATH"
 
 # python
 export PATH=$(python -m site --user-base)/bin:$PATH
