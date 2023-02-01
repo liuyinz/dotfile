@@ -2,7 +2,10 @@
 :verbose: true
 :update_sources: true
 :backtrace: false
+:bulk_threshold: 1000
+:concurrent_downloads: 8
 :sources:
-- https://mirrors.aliyun.com/rubygems/
+# - https://mirrors.aliyun.com/rubygems/
 # - https://mirrors.ustc.edu.cn/rubygems/
 # - https://gems.ruby-china.com/
+- https://mirrors.tuna.tsinghua.edu.cn/rubygems/
