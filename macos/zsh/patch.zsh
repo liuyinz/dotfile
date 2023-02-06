@@ -171,3 +171,10 @@ gpr-end() {
     | sed -n 's/.*github.com\/\(.*\)\.git/\1/p')
   git checkout origin/HEAD && git remote remove ${1:-upstream}
 }
+
+outcp() {
+  # setopt local_options local_traps
+  # unsetopt print_exit_value
+  trap 'echo "\nOutput copied!"' INT
+  tee <<(eval "$@") >(pbcopy) 2>/dev/null && echo "\nOutput copied!"
+}
