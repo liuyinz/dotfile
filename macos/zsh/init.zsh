@@ -121,6 +121,7 @@ plugins=(
   npm
   rust
   sudo
+  starship
   urltools
   vscode
   web-search
@@ -218,9 +219,6 @@ source ${${(%):-%x}:A:h}/patch.zsh
 command -v pip >/dev/null && _evalcache pip completion --zsh 2>/dev/null
 
 command -v plenv >/dev/null && _evalcache plenv init - zsh 2>/dev/null
-
-# theme
-command -v starship >/dev/null && _evalcache starship init zsh 2>/dev/null
 
 omz_clean() {
   echo "remove $ZSH_EVALCACHE_DIR ..."
