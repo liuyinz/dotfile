@@ -42,6 +42,9 @@ export GIT_PAGER="diff-so-fancy | less --tabs=4 -RFX"
 # emacs lsp-mode
 export LSP_USE_PLISTS=true
 
+# emacs enchant
+export ENCHANT_CONFIG_DIR=$CONFIG_HOME/enchant/
+
 # ssh
 export SSH_KEY_PATH=$HOME/.ssh/id_ed25519
 
