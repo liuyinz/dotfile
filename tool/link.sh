@@ -71,8 +71,8 @@ create_symlinks() {
         fi
 
       else
+        mkdir -p "$(dirname "$source")" "$(dirname "$target")"
         [ ! -e "$source" ] && mv "$target" "$source"
-        [ -f "$source" ] && mkdir -p "$(dirname "$target")"
         execute "$cmd" "New   :  $info"
       fi
 
