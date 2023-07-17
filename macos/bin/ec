@@ -4,20 +4,27 @@ source "$(dirname "$(realpath "${BASH_SOURCE[0]}" 2>/dev/null)")/lib/emacsclient
 
 epipe-ensure-p "$@"
 emacsclient-ensure-p
-emacsclient -q -e "(defun gui-frame-list ()
-                       (seq-filter (lambda (f)
-                                   (and (frame-parameter f 'display)
-                                        (null (frame-parameter f 'parent-frame))))
-                                   (frame-list)))" &>/dev/null
 
-# prevent creating another X frame if there is at least one present.
-if [ "$(emacsclient -e '(length (gui-frame-list))' 2>/dev/null)" -ge 1 ]; then
-  # SEE https://emacs.stackexchange.com/a/34740
-  emacsclient -u -e "(select-frame-set-input-focus (car (gui-frame-list)))"
+if [ "$(emacsclient -e 'emacs-major-version')" -ge 32 ]; then
+  # BUG "-r" option was added in emacsclient > 29, but still same with "-c"
   # shellcheck disable=SC2086
-  [ "$#" -ne 0 ] && emacsclient -q -n ${tmpfile:-$@}
-else
-  # shellcheck disable=SC2086
-  emacsclient -q -n -c ${tmpfile:-$@}
+  emacsclient -q -n -r ${tmpfile:-$@}
   emacsclient -u -e "(select-frame-set-input-focus (selected-frame))"
+else
+  emacsclient -q -e "(defun gui-frame-list ()
+                       (seq-filter (lambda (f)
+                                    (and (frame-parameter f 'display)
+                                         (null (frame-parameter f 'parent-frame))))
+                                   (frame-list)))" &>/dev/null
+  # prevent creating another X frame if there is at least one present.
+  if [ "$(emacsclient -e '(length (gui-frame-list))' 2>/dev/null)" -lt 1 ]; then
+    # shellcheck disable=SC2086
+    emacsclient -q -n -c ${tmpfile:-$@}
+    emacsclient -u -e "(select-frame-set-input-focus (selected-frame))"
+  else
+    # SEE https://emacs.stackexchange.com/a/34740
+    emacsclient -q -e "(select-frame-set-input-focus (car (gui-frame-list)))" &>/dev/null
+    # shellcheck disable=SC2086
+    [ "$#" -ne 0 ] && emacsclient -q -n ${tmpfile:-$@}
+  fi
 fi
