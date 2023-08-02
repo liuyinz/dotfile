@@ -66,6 +66,9 @@ declare -Ar BASE=(
   ## perl
   # ["base/MyConfig.pm"]=".cpan/CPAN/MyConfig.pm"
   # ["base/.perlcriticrc"]=".perlcriticrc"
+  # md
+  ["base/.mdlrc"]=".mdlrc"
+  ["base/mdl-rule.rb"]="mdl-rule.rb"
 )
 
 # --------------------------- MACOS -------------------------------
