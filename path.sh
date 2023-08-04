@@ -49,7 +49,7 @@ declare -Ar BASE=(
   # css, less, scss
   ["base/.stylelintrc.json"]=".stylelintrc.json"
   # js
-  ["base/.prettierrc.json"]=".prettierrc.json"
+  ["base/.prettierrc.js"]=".prettierrc.js"
   # .eslintrc.json: base/.eslintrc.json
   # yaml
   ["base/.yamllint"]=".yamllint"
