@@ -132,10 +132,8 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$GEM_HOME/bin:$PATH"
 
-# pypy3
-export PATH=/usr/local/share/pypy3:$PATH
 # python
-export PATH=$(python -m site --user-base)/bin:$PATH
+export PATH=$(python3 -m site --user-base)/bin:$PATH
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
