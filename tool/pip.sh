@@ -24,7 +24,7 @@ pip_install() {
 
 pip_freeze() {
   print_in_yellow "\n   pip: freeze start ...\n\n"
-  pip freeze -r "$_pip_cache" >"$_pip_cache"
+  pip3 freeze -r "$_pip_cache" >"$_pip_cache"
   print_result $? "pip: freeze done"
 }
 
