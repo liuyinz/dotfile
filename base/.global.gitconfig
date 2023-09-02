@@ -87,10 +87,6 @@
 [pull]
 	rebase = false
 
-[log]
-	abbrevCommit = true
-	decorate = no
-
 [status]
 	submoduleSummary = true
 
