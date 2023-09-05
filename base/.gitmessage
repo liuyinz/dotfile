@@ -1,9 +1,9 @@
 
 
-## type: build/ci/revert/feat/fix/docs/refactor/perf/test/style/chore
+## type: feat/fix/ci/revert/docs/refactor/perf/test/style/chore
 ## scope: commit/issueID/section..
-## format
-# <type>(optional <scope>):
+
+# <type>(optional <scope>):(optional !) description
 
 # optional <body>
 
