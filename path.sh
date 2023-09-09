@@ -24,8 +24,6 @@ declare -Ar BASE=(
   ["base/gh.yml"]=".config/gh/config.yml"
 
   # TOOL
-  # standard-version
-  ["base/.versionrc.json"]=".versionrc.json"
   # editorconfig
   ["base/.editorconfig"]=".editorconfig"
   # htop
@@ -108,6 +106,9 @@ declare -Ar MACOS=(
   ["macos/karabiner/karabiner.json"]=".config/karabiner/karabiner.json"
 
   ["macos/karabiner/assets"]=".config/karabiner/assets"
+
+  # git-cliff
+  ["base/cliff.toml"]="Library/Application\ Support/git-cliff/cliff.toml"
 )
 
 # --------------------------- LINUX -------------------------------
