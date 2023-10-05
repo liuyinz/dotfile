@@ -118,7 +118,6 @@ plugins=(
   git-flow-avh
   gpg-agent
   jsontools
-  npm
   rust
   sudo
   starship
@@ -127,9 +126,7 @@ plugins=(
   web-search
   pass
   qrcode
-  # nvm
   ## custom plugins
-  zsh-nvm
   autoupdate
   evalcache
   fzf-collection
@@ -163,7 +160,6 @@ plugin_ensure zsh-users/zsh-autosuggestions
 plugin_ensure zsh-users/zsh-completions
 plugin_ensure zdharma-continuum/fast-syntax-highlighting
 plugin_ensure TamCore/autoupdate-oh-my-zsh-plugins autoupdate
-plugin_ensure lukechilds/zsh-nvm
 
 # ---------------------- Plugin Setting --------------------------
 

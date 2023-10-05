@@ -97,6 +97,8 @@ declare -Ar MACOS=(
 
   # npm
   ["macos/Npmfile"]="$dotcache/Npmfile"
+  #pnpm
+  ["macos/Pnpmfile"]="$dotcache/Pnpmfile"
 
   # proxychain
   ["macos/proxychains.conf"]=".config/proxychains.conf"

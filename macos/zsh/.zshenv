@@ -140,12 +140,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
-# zsh-nvm
-export NVM_NODEJS_ORG_MIRROR="https://mirrors.ustc.edu.cn/node/"
-export NVM_LAZY_LOAD=true
-export NVM_LAZY_LOAD_EXTRA_COMMANDS=('make' 'vim' 'emacs' 'et' 'ecc' 'ec' 'edf')
-export NVM_AUTO_USE=true
-# export NVM_COMPLETION=true
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
 
 # Golang
 export GOPATH=$HOME/Code/go

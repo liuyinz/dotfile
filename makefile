@@ -28,8 +28,11 @@ pip:
 npm:
 	@source $(TOOL_DIR)/npm.sh
 
-update: brew pip npm
-	@echo "Update brew, pip, npm..."
+pnpm:
+	@source $(TOOL_DIR)/pnpm.sh
+
+update: brew pip npm pnpm
+	@echo "Update brew, pip, npm, pnpm..."
 
 hist:
 	@source $(TOOL_DIR)/hist.sh
