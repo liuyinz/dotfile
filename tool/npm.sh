@@ -7,27 +7,27 @@ _npm_cache="$HOME/$dotcache/Npmfile"
 npm_check() {
   if ! cmd_exists "npm"; then
     print_error "npm: " "cannot found"
-    exit 1 
- fi
+    exit 1
+  fi
+}
+
+npm_install() {
+  print_in_yellow "\n   npm: install start ...\n\n"
 
   if [ ! -h "$_npm_cache" ]; then
     print_error "path: $_npm_cache not linked yet."
     exit 1
   fi
 
-}
-
-npm_install() {
-  print_in_yellow "\n   npm: install start ...\n\n"
   cat "$_npm_cache" | xargs npm install --global
   print_result $? "npm: install done"
 }
 
 npm_dump() {
   print_in_yellow "\n   npm: dump start ...\n\n"
-  npm list -g --depth 0 --parseable \
-    | tail -n +2 \
-    | perl -F'/' -lne 'print $F[-1]' >"$_npm_cache"
+  npm list --global --json \
+    | jq -r '.dependencies | to_entries[] | "\(.key)@\(.value|.version)"' \
+      >"$_npm_cache"
   print_result $? "npm: dump done"
 }
 
