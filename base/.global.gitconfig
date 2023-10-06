@@ -9,6 +9,9 @@
 	excludesfile = ~/.gitignore
 	quotepath = false
 
+[transfer]
+	fsckObjects = true
+
 [color]
 	ui = true
 	diff = auto
