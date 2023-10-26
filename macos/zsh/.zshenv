@@ -137,8 +137,8 @@ export PATH=$(python3 -m site --user-base)/bin:$PATH
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
-export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
-export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
