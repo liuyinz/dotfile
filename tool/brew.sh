@@ -23,7 +23,7 @@ brew_install() {
 
 brew_dump() {
   print_in_yellow "\n   brew: dump start ...\n\n"
-  brew bundle dump --no-lock --force --file "$_brew_cache"
+  brew bundle dump --formula --cask --tap --no-lock --force --file "$_brew_cache"
   print_result $? "brew: dump done"
 }
 
