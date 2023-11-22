@@ -135,6 +135,7 @@ plugins=(
   fzf-tab
   zsh-autosuggestions
   fast-syntax-highlighting
+  jq
 )
 
 # ---------------------- Plugin Install --------------------------
@@ -160,6 +161,7 @@ plugin_ensure zsh-users/zsh-autosuggestions
 plugin_ensure zsh-users/zsh-completions
 plugin_ensure zdharma-continuum/fast-syntax-highlighting
 plugin_ensure TamCore/autoupdate-oh-my-zsh-plugins autoupdate
+plugin_ensure reegnz/jq-zsh-plugin jq
 
 # ---------------------- Plugin Setting --------------------------
 
