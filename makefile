@@ -31,7 +31,7 @@ npm:
 pnpm:
 	@source $(TOOL_DIR)/pnpm.sh
 
-update: brew pip npm pnpm
+update: brew pip pnpm npm
 	@echo "Update brew, pip, npm, pnpm..."
 
 hist:
