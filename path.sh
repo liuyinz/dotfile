@@ -42,6 +42,9 @@ declare -Ar BASE=(
   # enchant
   ["base/enchant/enchant.ordering"]=".config/enchant/enchant.ordering"
   ["base/enchant/en_US.dic"]=".config/enchant/en_US.dic"
+  # asdf
+  ["base/.tool-versions"]=".tool-versions"
+  ["base/.asdfrc"]=".asdfrc"
 
   # LANG
   # css, less, scss
