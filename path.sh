@@ -80,7 +80,7 @@ declare -Ar MACOS=(
   ["macos/Brewfile"]="$dotcache/Brewfile"
 
   # SELF
-  ["macos/bin"]=".local/bin"
+  ["macos/bin"]="bin"
 
   ["macos/.gitconfig"]=".gitconfig"
 
