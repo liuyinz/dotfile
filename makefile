@@ -25,14 +25,11 @@ brew: homebrew
 pip:
 	@source $(TOOL_DIR)/pip.sh
 
-npm:
-	@source $(TOOL_DIR)/npm.sh
-
 pnpm:
 	@source $(TOOL_DIR)/pnpm.sh
 
-update: brew pip pnpm npm
-	@echo "Update brew, pip, npm, pnpm..."
+update: brew pip pnpm
+	@echo "Update brew, pip, pnpm..."
 
 hist:
 	@source $(TOOL_DIR)/hist.sh
@@ -51,7 +48,6 @@ help::
 	$(info make bootstrap    = check xcode, homebrew and shell for MacOS)
 	$(info make brew         = install or dump package according to Brewfile)
 	$(info make pip          = install or freeze package according to requirements.txt)
-	$(info make npm          = install or dump package according to Npmfile)
 	$(info make update       = update brew, pip, npm package info)
 	$(info make hist         = backup or restore zsh history)
 	$(info make nvim         = bootstrap neovim)

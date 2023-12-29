@@ -98,8 +98,6 @@ declare -Ar MACOS=(
   # py
   ["macos/requirements.txt"]="$dotcache/requirements.txt"
 
-  # npm
-  ["macos/Npmfile"]="$dotcache/Npmfile"
   #pnpm
   ["macos/Pnpmfile"]="$dotcache/Pnpmfile"
 
@@ -124,6 +122,6 @@ declare -Ar LINUX=(
   # py
   ["linux/requirements.txt"]="$dotcache/requirements.txt"
 
-  # npm
-  ["linux/Npmfile"]="$dotcache/Npmfile"
+  # pnpm
+  ["linux/Pnpmfile"]="$dotcache/Pnpmfile"
 )
