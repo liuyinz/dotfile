@@ -109,7 +109,6 @@ plugins=(
   copypath
   deno
   direnv
-  pyenv
   encode64
   extract
   fzf
@@ -127,6 +126,7 @@ plugins=(
   web-search
   pass
   qrcode
+  asdf
   ## custom plugins
   autoupdate
   evalcache
@@ -187,8 +187,9 @@ ZSH_CUSTOM_AUTOUPDATE_QUIET=true
 # # fzf-proxy
 # [[ -n $HTTP ]] && export PROXYF_URLS="http://$HTTP,socks://$SOCKS"
 
-# eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
+# export $GOROOT
+source ~/.asdf/plugins/golang/set-env.zsh
+
 # ----------------------- Oh-my-zsh End ---------------------------
 
 source $ZSH/oh-my-zsh.sh

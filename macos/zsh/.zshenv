@@ -128,15 +128,6 @@ export FZF_DEFAULT_OPTS=" \
 # ccls
 export PATH=/usr/local/opt/llvm/bin:$PATH
 
-# Ruby
-export PATH=/usr/local/opt/ruby/bin:$PATH
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-export PATH="$GEM_HOME/bin:$PATH"
-
-# python
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
@@ -152,3 +143,4 @@ export PATH=$GOPATH/bin:$PATH
 export GO111MODULE=on
 export GOPROXY=https://goproxy.cn
 export GOSUMDB=sum.golang.google.cn
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true
