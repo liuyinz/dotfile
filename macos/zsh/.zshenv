@@ -133,7 +133,8 @@ export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$GEM_HOME/bin:$PATH"
 
 # python
-export PATH=$(python3 -m site --user-base)/bin:$PATH
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
