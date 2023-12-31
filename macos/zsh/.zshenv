@@ -49,6 +49,9 @@ export ENCHANT_CONFIG_DIR=$CONFIG_HOME/enchant/
 # ssh
 export SSH_KEY_PATH=$HOME/.ssh/id_ed25519
 
+# pass
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true
+
 # homebrew
 export HOMEBREW_BAT=1
 export HOMEBREW_NO_AUTO_UPDATE=1
