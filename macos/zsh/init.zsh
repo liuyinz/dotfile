@@ -126,7 +126,7 @@ plugins=(
   web-search
   pass
   qrcode
-  asdf
+  mise
   ## custom plugins
   autoupdate
   evalcache
