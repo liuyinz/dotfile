@@ -126,6 +126,10 @@ export FZF_DEFAULT_OPTS=" \
     --bind=ctrl-n:down,ctrl-p:up,alt-n:next-history,alt-p:previous-history \
     --bind=ctrl-u:cancel,ctrl-l:jump,ctrl-t:toggle-all,ctrl-v:clear-selection"
 
+#  --------------------------- mise -------------------------------
+
+export MISE_GO_SET_GOPATH=false
+
 #  --------------------------- Lang -------------------------------
 
 # ccls
@@ -145,5 +149,3 @@ export GOPATH=$HOME/Code/go
 export PATH=$GOPATH/bin:$PATH
 export GO111MODULE=on
 export GOPROXY=https://goproxy.cn
-export GOSUMDB=sum.golang.google.cn
-export ASDF_GOLANG_MOD_VERSION_ENABLED=true

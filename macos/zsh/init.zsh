@@ -187,9 +187,6 @@ ZSH_CUSTOM_AUTOUPDATE_QUIET=true
 # # fzf-proxy
 # [[ -n $HTTP ]] && export PROXYF_URLS="http://$HTTP,socks://$SOCKS"
 
-# export $GOROOT
-source ~/.asdf/plugins/golang/set-env.zsh
-
 # ----------------------- Oh-my-zsh End ---------------------------
 
 source $ZSH/oh-my-zsh.sh
