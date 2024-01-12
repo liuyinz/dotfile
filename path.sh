@@ -42,9 +42,8 @@ declare -Ar BASE=(
   # enchant
   ["base/enchant/enchant.ordering"]=".config/enchant/enchant.ordering"
   ["base/enchant/en_US.dic"]=".config/enchant/en_US.dic"
-  # asdf
-  ["base/.tool-versions"]=".tool-versions"
-  ["base/.asdfrc"]=".asdfrc"
+  # mise
+  ["base/mise"]=".config/mise"
 
   # LANG
   # css, less, scss
@@ -93,7 +92,6 @@ declare -Ar MACOS=(
   ["macos/ssh_config"]=".ssh/config"
 
   # gnupg
-  ["macos/gpg-agent.conf"]=".gnupg/gpg-agent.conf"
 
   # py
   ["macos/requirements.txt"]="$dotcache/requirements.txt"

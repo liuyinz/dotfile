@@ -108,7 +108,7 @@ plugins=(
   copyfile
   copypath
   deno
-  direnv
+  # direnv
   encode64
   extract
   fzf
@@ -116,7 +116,7 @@ plugins=(
   gitfast
   github
   git-flow-avh
-  gpg-agent
+  # gpg-agent
   jsontools
   rust
   sudo
