@@ -153,16 +153,16 @@ plugin_ensure() {
   fi
 }
 
-plugin_ensure mroth/evalcache
 plugin_ensure liuyinz/fzf-collection
-plugin_ensure trapd00r/LS_COLORS
-plugin_ensure skywind3000/z.lua
 plugin_ensure Aloxaf/fzf-tab
+plugin_ensure reegnz/jq-zsh-plugin jq
+plugin_ensure skywind3000/z.lua
+plugin_ensure TamCore/autoupdate-oh-my-zsh-plugins autoupdate
+plugin_ensure mroth/evalcache
+plugin_ensure trapd00r/LS_COLORS
 plugin_ensure zsh-users/zsh-autosuggestions
 plugin_ensure zsh-users/zsh-completions
 plugin_ensure zdharma-continuum/fast-syntax-highlighting
-plugin_ensure TamCore/autoupdate-oh-my-zsh-plugins autoupdate
-plugin_ensure reegnz/jq-zsh-plugin jq
 
 # ---------------------- Plugin Setting --------------------------
 
@@ -216,8 +216,6 @@ zstyle ':completion:*' list-dirs-first true
 source ${${(%):-%x}:A:h}/patch.zsh
 
 command -v pip >/dev/null && _evalcache pip completion --zsh 2>/dev/null
-
-command -v plenv >/dev/null && _evalcache plenv init - zsh 2>/dev/null
 
 omz_clean() {
   echo "remove $ZSH_EVALCACHE_DIR ..."
