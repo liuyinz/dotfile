@@ -4,7 +4,7 @@ experimental = true
 [tools]
 python = "3.11.7"
 go = "1.21.5"
-deno = "1.39.2"
+deno = "1.40.1"
 java = "20.0.1"
 ruby = "3.2.2"
 node = "21.6.1"
