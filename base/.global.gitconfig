@@ -9,8 +9,9 @@
 	excludesfile = ~/.gitignore
 	quotepath = false
 
-[transfer]
-	fsckObjects = true
+## BUG recommended by gun manual, but conflicts with oh-my-zsh clone.
+# [transfer]
+# 	fsckObjects = true
 
 [color]
 	ui = true
