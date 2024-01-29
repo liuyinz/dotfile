@@ -1,43 +1,43 @@
 SHELL    := /bin/bash
-TOOL_DIR  = $(CURDIR)/tool
+SCRIPTS_DIR  = $(CURDIR)/scripts
 
 .PHONY: help bootstrap link cmdtool homebrew brew pip nvim emacs update
 
 cmdtool:
-	@source $(TOOL_DIR)/cmd-line-tool.sh
+	@source $(SCRIPTS_DIR)/cmd-line-tool.sh
 
 homebrew:
-	@source $(TOOL_DIR)/homebrew.sh
+	@source $(SCRIPTS_DIR)/homebrew.sh
 
 shell:
-	@source $(TOOL_DIR)/shell.sh
+	@source $(SCRIPTS_DIR)/shell.sh
 
 link: shell
-	@/usr/local/bin/bash $(TOOL_DIR)/link.sh;
+	@/usr/local/bin/bash $(SCRIPTS_DIR)/link.sh;
 
 bootstrap: cmdtool homebrew link
 	@exec /usr/local/bin/zsh
 
 brew: homebrew
-	@source $(TOOL_DIR)/brew.sh
+	@source $(SCRIPTS_DIR)/brew.sh
 
 pip:
-	@source $(TOOL_DIR)/pip.sh
+	@source $(SCRIPTS_DIR)/pip.sh
 
 pnpm:
-	@source $(TOOL_DIR)/pnpm.sh
+	@source $(SCRIPTS_DIR)/pnpm.sh
 
 update: brew pip pnpm
 	@echo "Update brew, pip, pnpm..."
 
 hist:
-	@source $(TOOL_DIR)/hist.sh
+	@source $(SCRIPTS_DIR)/hist.sh
 
 nvim:
-	@source $(TOOL_DIR)/nvim.sh
+	@source $(SCRIPTS_DIR)/nvim.sh
 
 emacs:
-	@source $(TOOL_DIR)/emacs.sh
+	@source $(SCRIPTS_DIR)/emacs.sh
 
 help::
 	$(info make cmdtool      = check cmd-line-tool for MacOS)
