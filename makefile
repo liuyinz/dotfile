@@ -1,10 +1,9 @@
-SHELL	   := /bin/bash
-BASE_DIR    = $(CURDIR)
-TOOL_DIR    = $(BASE_DIR)/tool
+SHELL    := /bin/bash
+TOOL_DIR  = $(CURDIR)/tool
 
-.PHONY: help bootstrap link cmd-line-tool homebrew brew pip nvim emacs update
+.PHONY: help bootstrap link cmdtool homebrew brew pip nvim emacs update
 
-cmd-line-toool:
+cmdtool:
 	@source $(TOOL_DIR)/cmd-line-tool.sh
 
 homebrew:
@@ -16,7 +15,7 @@ shell:
 link: shell
 	@/usr/local/bin/bash $(TOOL_DIR)/link.sh;
 
-bootstrap: cmd-line-tool homebrew link
+bootstrap: cmdtool homebrew link
 	@exec /usr/local/bin/zsh
 
 brew: homebrew
@@ -41,7 +40,7 @@ emacs:
 	@source $(TOOL_DIR)/emacs.sh
 
 help::
-	$(info make cmdlinetool  = check cmd-line-tool for MacOS)
+	$(info make cmdtool      = check cmd-line-tool for MacOS)
 	$(info make homebrew     = check homebrew for MacOS)
 	$(info make shell        = check bash, zsh for MacOS)
 	$(info make link         = check link source to target)
