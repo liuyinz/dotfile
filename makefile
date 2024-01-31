@@ -47,7 +47,7 @@ help::
 	$(info make bootstrap    = check cmd-line-tool, homebrew and shell for MacOS)
 	$(info make brew         = install or dump package according to Brewfile)
 	$(info make pip          = install or freeze package according to requirements.txt)
-	$(info make update       = update brew, pip, npm package info)
+	$(info make update       = update brew, pip, pnpm package info)
 	$(info make hist         = backup or restore zsh history)
 	$(info make nvim         = bootstrap neovim)
 	$(info make emacs        = bootstrap emacs)
