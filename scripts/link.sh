@@ -6,9 +6,47 @@ cd "$(dirname "${BASH_SOURCE[0]}")" && source "./utils.sh"
 
 source "../path.sh"
 
-if [ "${BASH_VERSINFO:-0}" -lt 4 ]; then
-  print_error "${BASH_VERSINFO:-0}:" "do not support associative arrays" && return 1
-fi
+declare -a sets_to_link=("BASE")
+
+select_set() {
+  select opt in "${sets_all[@]}" "Quit"; do
+    if [ -n "$opt" ]; then
+      case $opt in
+        Quit)
+          exit 1
+          ;;
+        BASE)
+          return 0
+          ;;
+        SYS_*)
+          sets_to_link+=("$opt")
+          ;;
+        *)
+          local current_os
+          case "$(uname -sr)" in
+            Darwin*)
+              current_os="SYS_mac"
+              ;;
+            Linux*Microsoft*)
+              current_os="SYS_wsl"
+              ;;
+            Linux*)
+              current_os="SYS_linux"
+              ;;
+            CYGWIN* | MINGW* | MSYS*)
+              current_os="SYS_win"
+              ;;
+            *)
+              echo "system cannot identified !" && exit 1
+              ;;
+          esac
+          sets_to_link+=("$current_os" "$opt")
+          ;;
+      esac
+      break
+    fi
+  done
+}
 
 #######################################
 # create_symlinks
@@ -22,71 +60,59 @@ fi
 
 create_symlinks() {
 
-  if [ "$(get_os)" == "macos" ]; then
-    declare -a comb=("BASE" "MACOS")
-  else
-    declare -a comb=("BASE" "LINUX")
-  fi
-
-  local set=""
-
-  for set in "${comb[@]}"; do
+  for set in "${sets_to_link[@]}"; do
 
     print_in_yellow "\n   $set\n\n"
-    printf "   %-9s    %-30s      %s\n" "Status" "Source" "Target"
-    declare -n dict="$set"
+    printf "   %-9s    %-30s        %s\n" "Status" "Source" "Target"
 
-    local i=""
-    local source=""
-    local target=""
-    local cmd=""
-    local info=""
+    local IFS='^'
+    local regexp='^(.*) <- (.*)$'
 
-    for i in "${!dict[@]}"; do
+    for i in $(eval printf '%s^' \"\$\{"${set}"[@]\}\"); do
+      local source target cmd info
+      if [[ "$i" =~ $regexp ]]; then
+        source="$(cd ../source && echo "$PWD/${BASH_REMATCH[1]}" || exit)"
+        target="$HOME/${BASH_REMATCH[2]}"
 
-      source="$(
-        cd ..
-        readlink -m "$i"
-      )"
-      target="$HOME/${dict[$i]}"
-      cmd="ln -fs $source $target"
-      info="$(printf "%-30s  ->  %s" "$i" "${target/$HOME/\~}")"
+        cmd="ln -fs $source $target"
+        info="$(printf "%-30s  <-    %s" "${BASH_REMATCH[1]}" "~/${BASH_REMATCH[2]}")"
 
-      if [ ! -e "$source" ] && [ ! -e "$target" ]; then
-        print_error "Lack  :  $info"
+        if [ ! -e "$source" ] && [ ! -e "$target" ]; then
+          print_error "Lack  $info"
 
-      elif [ -e "$source" ] && [ -e "$target" ]; then
+        elif [ -e "$source" ] && [ -e "$target" ]; then
 
-        if [ "$(readlink "$target")" == "$source" ]; then
-          print_in_grey "   [✔] Same  :  $info\n"
-        else
-          ask_for_confirmation "'${target/$HOME/\~}' exists, overwrite it?"
-
-          if answer_is_yes; then
-            mv "$target" "$HOME/$dotcache/backup"
-            execute "$cmd" "Cover :  $info"
+          if [ "$(readlink "$target")" == "$source" ]; then
+            print_in_grey "   [✔] Same  $info\n"
           else
-            print_error "Keep  :  $info"
+            ask_for_confirmation "\"~${target}\" exists, overwrite it?"
+
+            if answer_is_yes; then
+              mv "$target" "$HOME/$dotcache/backup"
+              execute "$cmd" "Cover  $info"
+            else
+              print_error "Keep  $info"
+            fi
           fi
+
+        else
+          mkdir -p "$(dirname "$source")" "$(dirname "$target")"
+          [ ! -e "$source" ] && mv "$target" "$source"
+          execute "$cmd" "New  $info"
         fi
-
-      else
-        mkdir -p "$(dirname "$source")" "$(dirname "$target")"
-        [ ! -e "$source" ] && mv "$target" "$source"
-        execute "$cmd" "New   :  $info"
       fi
-
     done
-
   done
-
 }
 
 main() {
   print_in_purple "\n   link: backup check ...\n\n"
   mkd "$HOME/$dotcache/backup"
 
-  print_in_purple "\n   link: symbolic check ...\n"
+  print_in_purple "\n   link: select your choice ...\n\n"
+  select_set
+
+  print_in_purple "\n   link: symlink start ...\n\n"
   create_symlinks
 }
 

@@ -3,123 +3,127 @@
 #######################################
 #
 # Definition: Associate Array which is used to store symbolic path.
-# Format: [SOURCE]=TARGET
-#         SOURCE's path is based on current working directory,
+# Format: SOURCE <- TARGET
+#         SOURCE's path is based on subdirectory of ./source,
 #         TARGET's path is based on $HOME.
 #
 #######################################
 
+declare -a sets_all=("BASE" "SYS_mac" "SYS_linux" "SYS_win" "SELF_pro15")
+
 # --------------------------- BASE -------------------------------
 
-declare -Ar BASE=(
+declare -ar BASE=(
   # TERMINAL
   # kitty
-  ["base/kitty"]=".config/kitty"
+  "base/kitty <- .config/kitty"
   # theme
-  ["base/starship.toml"]=".config/starship.toml"
+  "base/starship.toml <- .config/starship.toml"
 
   # GIT
-  ["base/.global.gitconfig"]=".global.gitconfig"
-  ["base/.gitmessage"]=".gitmessage"
-  ["base/gh.yml"]=".config/gh/config.yml"
+  "base/.global.gitconfig <- .global.gitconfig"
+  "base/.gitmessage <- .gitmessage"
+  "base/gh.yml <- .config/gh/config.yml"
 
   # TOOL
   # editorconfig
-  ["base/.editorconfig"]=".editorconfig"
+  "base/.editorconfig <- .editorconfig"
   # htop
-  ["base/htoprc"]=".config/htop/htoprc"
+  "base/htoprc <- .config/htop/htoprc"
   # bat
-  ["base/bat.conf"]=".config/bat.conf"
+  "base/bat.conf <- .config/bat.conf"
   # ripgrep
-  ["base/.ripgreprc"]=".config/.ripgreprc"
-  ["base/.rgignore"]=".config/.rgignore"
+  "base/.ripgreprc <- .config/.ripgreprc"
+  "base/.rgignore <- .config/.rgignore"
   # ranger
-  ["base/ranger"]=".config/ranger"
+  "base/ranger <- .config/ranger"
   # tealdeer
-  ["base/tealdeer.toml"]=".config/tealdeer/config.toml"
+  "base/tealdeer.toml <- .config/tealdeer/config.toml"
   # lazygit
-  ["base/lazygit.yml"]=".config/lazygit/config.yml"
+  "base/lazygit.yml <- .config/lazygit/config.yml"
   # enchant
-  ["base/enchant/enchant.ordering"]=".config/enchant/enchant.ordering"
-  ["base/enchant/en_US.dic"]=".config/enchant/en_US.dic"
+  "base/enchant/enchant.ordering <- .config/enchant/enchant.ordering"
+  "base/enchant/en_US.dic <- .config/enchant/en_US.dic"
   # mise
-  ["base/mise"]=".config/mise"
+  "base/mise <- .config/mise"
 
   # LANG
   # css, less, scss
-  ["base/.stylelintrc.json"]=".stylelintrc.json"
+  "base/.stylelintrc.json <- .stylelintrc.json"
   # js
-  ["base/.prettierrc.js"]=".prettierrc.js"
+  "base/.prettierrc.js <- .prettierrc.js"
   # .eslintrc.json: base/.eslintrc.json
   # yaml
-  ["base/.yamllint"]=".yamllint"
+  "base/.yamllint <- .yamllint"
   # py
-  ["base/pip.conf"]=".config/pip/pip.conf"
+  "base/pip.conf <- .config/pip/pip.conf"
   # ruby
-  ["base/.gemrc"]=".gemrc"
+  "base/.gemrc <- .gemrc"
   # sh
-  ["base/.shellcheckrc"]=".shellcheckrc"
+  "base/.shellcheckrc <- .shellcheckrc"
   # cpp
-  ["base/.clang-format"]=".clang-format"
+  "base/.clang-format <- .clang-format"
   # rust
-  ["base/cargo.toml"]=".cargo/config"
+  "base/cargo.toml <- .cargo/config"
   ## perl
-  # ["base/MyConfig.pm"]=".cpan/CPAN/MyConfig.pm"
-  # ["base/.perlcriticrc"]=".perlcriticrc"
+  # "base/MyConfig.pm <- .cpan/CPAN/MyConfig.pm"
+  # "base/.perlcriticrc <- .perlcriticrc"
   # md
-  ["base/.mdlrc"]=".mdlrc"
-  ["base/mdl-rule.rb"]="mdl-rule.rb"
+  "base/.mdlrc <- .mdlrc"
+  "base/mdl-rule.rb <- mdl-rule.rb"
 )
 
-# --------------------------- MACOS -------------------------------
+# --------------------------- MAC -------------------------------
 
-declare -Ar MACOS=(
+declare -ar SYS_mac=(
   # zsh
-  ["macos/zsh/.zshenv"]=".zshenv"
-  ["macos/zsh/.zsh_history"]="$dotcache/.zsh_history"
+  "mac/zsh/.zshenv <- .zshenv"
+  "mac/zsh/.zsh_history <- $dotcache/.zsh_history"
 
   # brew
-  ["macos/Brewfile"]="$dotcache/Brewfile"
+  "mac/Brewfile <- $dotcache/Brewfile"
 
   # SELF
-  ["macos/bin"]="bin"
+  "mac/bin <- bin"
 
-  ["macos/.gitconfig"]=".gitconfig"
+  "mac/.gitconfig <- .gitconfig"
 
-  ["macos/.gitignore"]=".gitignore"
+  "mac/.gitignore <- .gitignore"
 
   # ssh
-  ["macos/ssh_config"]=".ssh/config"
+  "mac/ssh_config <- .ssh/config"
 
   # gnupg
 
   # py
-  ["macos/requirements.txt"]="$dotcache/requirements.txt"
+  "mac/requirements.txt <- $dotcache/requirements.txt"
 
   #pnpm
-  ["macos/Pnpmfile"]="$dotcache/Pnpmfile"
+  "mac/Pnpmfile <- $dotcache/Pnpmfile"
 
   # proxychain
-  ["macos/proxychains.conf"]=".config/proxychains.conf"
+  "mac/proxychains.conf <- .config/proxychains.conf"
 
-  # MACOS
+  # MAC
   # karabiner
-  ["macos/karabiner/karabiner.json"]=".config/karabiner/karabiner.json"
+  "mac/karabiner/karabiner.json <- .config/karabiner/karabiner.json"
 
-  ["macos/karabiner/assets"]=".config/karabiner/assets"
+  "mac/karabiner/assets <- .config/karabiner/assets"
 
   # git-cliff
-  ["base/cliff.toml"]="Library/Application\ Support/git-cliff/cliff.toml"
+  # "base/cliff.toml <- Library/Application\ Support/git-cliff/cliff.toml"
 )
 
 # --------------------------- LINUX -------------------------------
 
-declare -Ar LINUX=(
-  ["linux/.gitconfig"]=".gitconfig"
-
+declare -ar SYS_linux=(
+  "linux/.gitconfig <- .gitconfig"
   # py
-  ["linux/requirements.txt"]="$dotcache/requirements.txt"
-
+  "linux/requirements.txt <- $dotcache/requirements.txt"
   # pnpm
-  ["linux/Pnpmfile"]="$dotcache/Pnpmfile"
+  "linux/Pnpmfile <- $dotcache/Pnpmfile"
 )
+
+# ---------------------------- WIN --------------------------------
+
+declare -ar SELF_pro15=()
