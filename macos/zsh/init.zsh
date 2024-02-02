@@ -165,6 +165,8 @@ plugin_ensure zsh-users/zsh-completions
 plugin_ensure zdharma-continuum/fast-syntax-highlighting
 
 # ---------------------- Plugin Setting --------------------------
+# mise installation
+command -v mise >/dev/null || curl https://mise.run | sh
 
 # zlua, for emacs use
 export ZLUA_SCRIPT
@@ -186,6 +188,7 @@ ZSH_CUSTOM_AUTOUPDATE_QUIET=true
 
 # # fzf-proxy
 # [[ -n $HTTP ]] && export PROXYF_URLS="http://$HTTP,socks://$SOCKS"
+
 
 # ----------------------- Oh-my-zsh End ---------------------------
 
