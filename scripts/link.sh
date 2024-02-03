@@ -9,6 +9,7 @@ source "../path.sh"
 declare -a sets_to_link=("BASE")
 
 select_set() {
+  local COLUMNS=0
   select opt in "${sets_all[@]}" "Quit"; do
     if [ -n "$opt" ]; then
       case $opt in
