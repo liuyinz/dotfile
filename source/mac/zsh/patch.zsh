@@ -20,6 +20,7 @@ alias uap="export ALL_PROXY="
 # App
 # -----------------------
 alias asr='alias | rg'
+alias rg='rg --ignore-file=~/.gitignore --ignore-file=~/.config/.rgignore'
 alias rt='trash'
 alias rr="ranger"
 alias vi='nvim'
