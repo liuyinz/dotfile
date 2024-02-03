@@ -2,9 +2,7 @@
 /private/var/folders/*
 /var/folders/*
 .Trash/
-Music/
 log/
-Pictures/
 .log/
 .Trash/
 .bundle
@@ -16,7 +14,6 @@ Pictures/
 .vscode/
 .cache/
 node_modules/
-npm-global/
 Library/
 tmp/
 .git/
