@@ -64,7 +64,7 @@ create_symlinks() {
   for set in "${sets_to_link[@]}"; do
 
     print_in_yellow "\n   $set\n\n"
-    printf "   %-9s    %-30s        %s\n" "Status" "Source" "Target"
+    printf "   %-9s %-30s        %s\n" "Status" "Source" "Target"
 
     local IFS='^'
     local regexp='^(.*) <- (.*)$'
@@ -76,7 +76,7 @@ create_symlinks() {
         target="$HOME/${BASH_REMATCH[2]}"
 
         cmd="ln -fs $source $target"
-        info="$(printf "%-30s  <-    %s" "${BASH_REMATCH[1]}" "~/${BASH_REMATCH[2]}")"
+        info="$(printf "%-30s  <-    ~/%s" "${BASH_REMATCH[1]}" "${BASH_REMATCH[2]}")"
 
         if [ ! -e "$source" ] && [ ! -e "$target" ]; then
           print_error "Lack  $info"
