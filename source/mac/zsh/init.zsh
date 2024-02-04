@@ -237,4 +237,5 @@ source ${${(%):-%x}:A:h}/user.sh
 
 # ----------------------- Profiler End ---------------------------
 
+# BUG zprof failed to be fixed
 [[ "$ZSH_PROFILER" == "true" ]] && zprof | less
