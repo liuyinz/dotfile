@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+alias zprof='ZSH_PROFILER="true" exec zsh'
+
 # SEE https://stackoverflow.com/a/60987764/13194984
 # fix .zshenv $PATH order chaos , `set -x` to debug
 [[ -f $HOME/.zshenv ]] && source "$HOME/.zshenv"
@@ -189,6 +191,7 @@ ZSH_CUSTOM_AUTOUPDATE_QUIET=true
 # # fzf-proxy
 # [[ -n $HTTP ]] && export PROXYF_URLS="http://$HTTP,socks://$SOCKS"
 
+command -v pip >/dev/null && _evalcache pip completion --zsh 2>/dev/null
 
 # ----------------------- Oh-my-zsh End ---------------------------
 
@@ -216,10 +219,6 @@ zstyle ':completion:*' rehash true
 # Keep directories and files separated
 zstyle ':completion:*' list-dirs-first true
 
-source ${${(%):-%x}:A:h}/patch.zsh
-
-command -v pip >/dev/null && _evalcache pip completion --zsh 2>/dev/null
-
 omz_clean() {
   echo "remove $ZSH_EVALCACHE_DIR ..."
   rm "$ZSH_EVALCACHE_DIR"/init-*.sh
@@ -233,6 +232,8 @@ omz_update() {
   omz_clean
   exec zsh
 }
+
+source ${${(%):-%x}:A:h}/user.sh
 
 # ----------------------- Profiler End ---------------------------
 

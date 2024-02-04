@@ -1,10 +1,8 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 # Aliases
 # default
 # -----------------------
-alias zprof='ZSH_PROFILER="true" exec zsh'
-
 alias ls='gls -F --color --group-directories-first'
 alias ll='gls -lhF --color --group-directories-first'
 alias la='gls -AF --color --group-directories-first'
@@ -27,32 +25,6 @@ alias vi='nvim'
 alias lg='lazygit'
 alias pc="proxychains4"
 alias h="htop"
-
-# Remove .DS_Store files recursively in a directory, default .
-function rmdsstore() {
-  find "${@:-.}" -type f -name .DS_Store -delete
-}
-
-#######################################
-# zsh_stats
-# Arguments:
-#   Number: top most used command
-# Outputs:
-#   Lists of commands stats
-#######################################
-
-function zsh_stats {
-  fc -l 1 \
-    | perl -lane '
-$h{$F[1]}++;$count++;END
-{foreach (keys %h) {printf "%s %.2f%% %d\n", $_, ($h{$_}*100/$count), $h{$_};}}' \
-    | grep -v "./" \
-    | sort -nr -k 3 \
-    | head -n ${1:-30} \
-    | perl -lane 'printf "%s %s\n", $_ , "▄" x ($F[2] / 5)' \
-    | column -s " " -t \
-    | perl -pe '$_=" ".$_'
-}
 
 #  ---------------------------- Git --------------------------------
 
@@ -178,4 +150,30 @@ outcp() {
   # unsetopt print_exit_value
   trap 'echo "\nOutput copied!"' INT
   tee <<(eval "$@") >(pbcopy) 2>/dev/null && echo "\nOutput copied!"
+}
+
+# Remove .DS_Store files recursively in a directory, default .
+function rmdsstore() {
+  find "${@:-.}" -type f -name .DS_Store -delete
+}
+
+#######################################
+# hist_stats
+# Arguments:
+#   Number: top most used command
+# Outputs:
+#   Lists of commands stats
+#######################################
+
+function hist_stats {
+  fc -l 1 \
+    | perl -lane '
+$h{$F[1]}++;$count++;END
+{foreach (keys %h) {printf "%s %.2f%% %d\n", $_, ($h{$_}*100/$count), $h{$_};}}' \
+    | grep -v "./" \
+    | sort -nr -k 3 \
+    | head -n ${1:-30} \
+    | perl -lane 'printf "%s %s\n", $_ , "▄" x ($F[2] / 5)' \
+    | column -s " " -t \
+    | perl -pe '$_=" ".$_'
 }
