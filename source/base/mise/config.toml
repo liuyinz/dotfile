@@ -3,7 +3,7 @@ experimental = true
 
 [tools]
 python = "3.11.7"
-go = "1.21.5"
+go = "1.22rc2"
 deno = "1.40.1"
 ruby = "3.2.2"
 node = "21.6.1"
