@@ -99,7 +99,7 @@ create_symlinks() {
         else
           mkdir -p "$(dirname "$source")" "$(dirname "$target")"
           [ ! -e "$source" ] && mv "$target" "$source"
-          execute "$cmd" "New  $info"
+          execute "$cmd" "New   $info"
         fi
       fi
     done
