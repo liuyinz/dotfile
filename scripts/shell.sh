@@ -38,7 +38,7 @@ zsh_default() {
 
 zshrc_init() {
   if [ ! -e ~/.zshrc ]; then
-    print_in_yellow "zshrc: init start ..."
+    print_in_yellow "zshrc: init start ...\n\n"
     # shellcheck disable=SC2016
     echo '## Uncomment line below to start zsh profiler
 
@@ -48,7 +48,7 @@ zshrc_init() {
 export HTTP=
 export SOCKS=
 
-source $DOTFILE_HOME/macos/zsh/init.zsh' >>"$HOME/.zshrc"
+source $DOTFILE_HOME/.cache/init.zsh' >>"$HOME/.zshrc"
   fi
 
   print_result $? "zshrc: init done"
@@ -62,11 +62,11 @@ main() {
   print_in_purple "\n   bash: install check ...\n\n"
   bash_install
 
-  print_in_purple "\n   zsh: install check ...\n\n"
-  zsh_install
-
-  print_in_purple "\n   zsh: default check ...\n\n"
-  zsh_default
+  # print_in_purple "\n   zsh: install check ...\n\n"
+  # zsh_install
+  #
+  # print_in_purple "\n   zsh: default check ...\n\n"
+  # zsh_default
 
   print_in_purple "\n   zshrc: init check ...\n\n"
   zshrc_init

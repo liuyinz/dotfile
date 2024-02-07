@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dotcache=".cache/dotfile"
+dotcache=".config/dotfile/.cache"
 
 answer_is_yes() {
   [[ "$REPLY" =~ ^[Yy]$ ]] \

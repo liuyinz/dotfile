@@ -126,6 +126,7 @@ declare -ar home_air15=(
   # zsh
   "home_air15/zsh/.zshenv <- .zshenv"
   "home_air15/zsh/.zsh_history <- $dotcache/.zsh_history"
+  "home_air15/zsh/init.zsh <- $dotcache/init.zsh"
   
   # brew
   "home_air15/Brewfile <- $dotcache/Brewfile"
