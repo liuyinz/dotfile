@@ -21,7 +21,7 @@ install_homebrew() {
   if ! cmd_exists "brew"; then
     print_in_green "\n   homebrew: install ...\n\n"
     ask_for_sudo
-    printf "\n" | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &>/dev/null
+    printf "\n" | /bin/bash -c "$(curl -fsSL curl -fsSL https://github.com/Homebrew/install/raw/master/install.sh)" &>/dev/null
     #  └─ simulate the ENTER keypress
   fi
 
