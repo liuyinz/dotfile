@@ -9,7 +9,7 @@
 #
 #######################################
 
-declare -a sets_all=("BASE" "SYS_mac" "SYS_linux" "SYS_win" "SELF_pro15")
+declare -a sets_all=("BASE" "SYS_mac" "SYS_linux" "SYS_win" "home_air15")
 
 # --------------------------- BASE -------------------------------
 
@@ -76,15 +76,8 @@ declare -ar BASE=(
 # --------------------------- MAC -------------------------------
 
 declare -ar SYS_mac=(
-  # zsh
-  "mac/zsh/.zshenv <- .zshenv"
-  "mac/zsh/.zsh_history <- $dotcache/.zsh_history"
-
-  # brew
-  "mac/Brewfile <- $dotcache/Brewfile"
-
   # SELF
-  "mac/bin <- bin"
+  "mac/bin <- .local/usr/bin"
 
   "mac/.gitconfig <- .gitconfig"
 
@@ -92,8 +85,6 @@ declare -ar SYS_mac=(
 
   # ssh
   "mac/ssh_config <- .ssh/config"
-
-  # gnupg
 
   # py
   "mac/requirements.txt <- $dotcache/requirements.txt"
@@ -126,4 +117,17 @@ declare -ar SYS_linux=(
 
 # ---------------------------- WIN --------------------------------
 
-declare -ar SELF_pro15=()
+
+
+
+#  -------------------------- machine ------------------------------
+
+declare -ar home_air15=(
+  # zsh
+  "home_air15/zsh/.zshenv <- .zshenv"
+  "home_air15/zsh/.zsh_history <- $dotcache/.zsh_history"
+  
+  # brew
+  "home_air15/Brewfile <- $dotcache/Brewfile"
+
+)
