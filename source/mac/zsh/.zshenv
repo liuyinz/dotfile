@@ -25,7 +25,7 @@ export HISTSIZE=1000000000
 export SAVEHIST=$HISTSIZE
 
 # PATH
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/.local/usr/bin:$HOME/.local/bin:$PATH
 
 # export EDITOR="nvim"
 export EDITOR="ec"
@@ -54,24 +54,30 @@ export HOMEBREW_BAT=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_UPGRADE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
-export HOMEBREW_NO_INSTALL_FROM_API=1
-export HOMEBREW_BUNDLE_BREW_SKIP="daviderestivo/emacs-head/emacs-head@29"
+export HOMEBREW_BUNDLE_BREW_SKIP="daviderestivo/emacs-head/emacs-head@30"
+
+# tsinghua source
+export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+
+# gnu toolchain
+
+for item in "coreutils" "findutils" "grep" "make" "gnu-time" "gnu-tar" "gnu-sed"
+do
+  export PATH=/opt/homebrew/opt/$item/libexec/gnubin:$PATH
+done
 
 # curl
-export PATH=/usr/local/opt/curl/bin:$PATH
-# coreutils
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-# findutils
-export PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
-# other
-export PATH=/usr/local/opt/gnu-time/libexec/gnubin:$PATH
-export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
-export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
-export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
-# make
-export PATH=/usr/local/opt/make/libexec/gnubin:$PATH
+export PATH=/opt/homebrew/opt/curl/bin:$PATH
+
 # getopt
-export PATH=/usr/local/opt/gnu-getopt/bin:$PATH
+export PATH=/opt/homebrew/opt/gnu-getopt/bin:$PATH
 
 # Ripgrep
 export RIPGREP_CONFIG_PATH=$CONFIG_HOME/.ripgreprc
@@ -130,7 +136,7 @@ export MISE_GO_SET_GOPATH=false
 #  --------------------------- Lang -------------------------------
 
 # ccls
-export PATH=/usr/local/opt/llvm/bin:$PATH
+# export PATH=/opt/homebrew/opt/llvm/bin:$PATH
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
