@@ -95,12 +95,15 @@ declare -ar SYS_mac=(
   # proxychain
   "mac/proxychains.conf <- .config/proxychains.conf"
 
-  # MAC
-  # karabiner
-  "mac/karabiner.json <- .config/karabiner/karabiner.json"
-
   # git-cliff
   # "base/cliff.toml <- Library/Application\ Support/git-cliff/cliff.toml"
+  
+  # MAC app
+  # karabiner
+  "mac/karabiner.json <- .config/karabiner/karabiner.json"
+  # alt-tab
+  "mac/alt-tab.plist <- Library/Preferences/com.lwouis.alt-tab-macos.plist"
+
 )
 
 # --------------------------- LINUX -------------------------------
