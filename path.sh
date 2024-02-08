@@ -97,9 +97,7 @@ declare -ar SYS_mac=(
 
   # MAC
   # karabiner
-  "mac/karabiner/karabiner.json <- .config/karabiner/karabiner.json"
-
-  "mac/karabiner/assets <- .config/karabiner/assets"
+  "mac/karabiner.json <- .config/karabiner/karabiner.json"
 
   # git-cliff
   # "base/cliff.toml <- Library/Application\ Support/git-cliff/cliff.toml"
