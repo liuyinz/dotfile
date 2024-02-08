@@ -89,7 +89,7 @@ create_symlinks() {
             ask_for_confirmation "\"~/${BASH_REMATCH[2]}\" exists, overwrite it?"
             if answer_is_yes; then
               mv "$target" "$HOME/$dotcache/backup"
-              execute "$cmd" "Cover  $info"
+              execute "$cmd" "Cover $info"
             else
               print_error "Keep  $info"
             fi
