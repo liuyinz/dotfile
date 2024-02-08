@@ -86,8 +86,7 @@ create_symlinks() {
           if [ "$(readlink "$target")" == "$source" ]; then
             print_in_grey "   [✔] Same  $info\n"
           else
-            ask_for_confirmation "\"~${target}\" exists, overwrite it?"
-
+            ask_for_confirmation "\"~/${BASH_REMATCH[2]}\" exists, overwrite it?"
             if answer_is_yes; then
               mv "$target" "$HOME/$dotcache/backup"
               execute "$cmd" "Cover  $info"

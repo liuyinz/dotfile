@@ -3,7 +3,7 @@
 dotcache=".config/dotfile/.cache"
 
 answer_is_yes() {
-  [[ "$REPLY" =~ ^[Yy]$ ]] \
+  [[ "$REPLY" =~ [Yy] ]] \
     && return 0 \
     || return 1
 }
