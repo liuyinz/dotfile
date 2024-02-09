@@ -2,11 +2,11 @@
 experimental = true
 
 [tools]
-python = "3.11.9"
-go = "1.22.0"
-deno = "1.41.0"
-ruby = "3.2.2"
-node = "21.7.1"
-rust = "1.75.0"
-bun = "1.0.26"
-lua = "5.4.6"
+python = "3.11"
+go = "1.22"
+deno = "1.41"
+ruby = "3.2"
+node = "21.7.2"
+rust = "1.75"
+bun = "1.0"
+lua = "5.4"
