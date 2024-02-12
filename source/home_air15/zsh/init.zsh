@@ -221,9 +221,9 @@ zstyle ':completion:*' list-dirs-first true
 
 omz_clean() {
   echo "remove $ZSH_EVALCACHE_DIR ..."
-  rm "$ZSH_EVALCACHE_DIR"/init-*.sh
+  rm "$ZSH_EVALCACHE_DIR"/init-*.sh 2>dev/null
   echo "remove $ZSH_COMPDUMP ..."
-  rm "$ZSH_COMPDUMP"
+  rm "$ZSH_COMPDUMP" 2>dev/null
 }
 
 omz_update() {
