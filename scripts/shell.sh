@@ -43,11 +43,6 @@ zshrc_init() {
     echo '## Uncomment line below to start zsh profiler
 
 # ZSH_PROFILER="true"
-
-# proxy
-export HTTP=
-export SOCKS=
-
 source $DOTFILE_HOME/.cache/init.zsh' >>"$HOME/.zshrc"
   fi
 

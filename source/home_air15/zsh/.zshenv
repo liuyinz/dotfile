@@ -6,18 +6,18 @@
 ## ---------------------------- Zsh --------------------------------
 
 # default
-export CONFIG_HOME=$HOME/.config
-export CACHE_HOME=$HOME/.cache
+export CONFIG_DIR=$HOME/.config
+export DATA_DIR=$HOME/.local/share
 
 # dotfile
-export DOTFILE_HOME=$CONFIG_HOME/dotfile
+export DOTFILE_HOME=$CONFIG_DIR/dotfile
 
 # misc
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export TIME_STYLE="+%y-%m-%d %H:%M"
 export PAGER="less --tabs=4"
-export LESSHISTFILE=$CACHE_HOME/.lesshst
+export LESSHISTFILE=$DATA_DIR/.lesshst
 
 # hist
 export HISTFILE=$HOME/.zsh_history
@@ -40,7 +40,7 @@ export GIT_PAGER="diff-so-fancy | less --tabs=4 -RFX"
 export LSP_USE_PLISTS=true
 
 # emacs enchant
-export ENCHANT_CONFIG_DIR=$CONFIG_HOME/enchant/
+export ENCHANT_CONFIG_DIR=$CONFIG_DIR/enchant/
 
 # ssh
 export SSH_KEY_PATH=$HOME/.ssh/id_ed25519
@@ -79,28 +79,28 @@ export PATH=/opt/homebrew/opt/curl/bin:$PATH
 export PATH=/opt/homebrew/opt/gnu-getopt/bin:$PATH
 
 # Ripgrep
-export RIPGREP_CONFIG_PATH=$CONFIG_HOME/.ripgreprc
+export RIPGREP_CONFIG_PATH=$CONFIG_DIR/.ripgreprc
 
 # proxychains-ng
-export PROXYCHAINS_CONF_FILE=$CONFIG_HOME/proxychains.conf
+export PROXYCHAINS_CONF_FILE=$CONFIG_DIR/proxychains.conf
 
 # bat
-export BAT_CONFIG_PATH=$CONFIG_HOME/bat.conf
+export BAT_CONFIG_PATH=$CONFIG_DIR/bat.conf
 
 # lazygit
-export CONFIG_DIR="$CONFIG_HOME/lazygit"
+export CONFIG_DIR="$CONFIG_DIR/lazygit"
 
 # tealdeer
-export TEALDEER_CONFIG_DIR=$CONFIG_HOME/tealdeer
+export TEALDEER_CONFIG_DIR=$CONFIG_DIR/tealdeer
 
 # z.lua
-export _ZL_DATA=$CACHE_HOME/.zlua
+export _ZL_DATA=$DATA_DIR/.zlua
 export _ZL_ECHO=1
 export _ZL_ADD_ONCE=0
 export _ZL_MATCH_MODE=0
 export _ZL_HYPHEN=1
 export _ZL_ROOT_MARKERS=".git,.svn,.hg,.root,package.json"
-export _ZL_EXCLUDE_DIRS="$CACHE_HOME"
+# export _ZL_EXCLUDE_DIRS="$DATA_DIR"
 
 # fzf
 export FZF_DEFAULT_COMMAND='rg --files'
@@ -113,7 +113,7 @@ export FZF_DEFAULT_OPTS=" \
     --multi \
     --sort \
     --no-scrollbar \
-    --history=$CACHE_HOME/.fzf_history \
+    --history=$DATA_DIR/.fzf_history \
     --marker='+ ' \
     --separator='' \
     --info=inline\

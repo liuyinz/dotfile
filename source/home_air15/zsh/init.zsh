@@ -94,10 +94,10 @@ HIST_STAMPS="yyyy-mm-dd"
 ZSH_CUSTOM="$ZSH/custom"
 
 # Set cache dir
-ZSH_CACHE_DIR="$CACHE_HOME/oh-my-zsh"
+ZSH_CACHE_DIR="$DATA_DIR/oh-my-zsh"
 
 # Set compdump file
-ZSH_COMPDUMP="$CACHE_HOME/.zcompdump"
+ZSH_COMPDUMP="$DATA_DIR/.zcompdump"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
