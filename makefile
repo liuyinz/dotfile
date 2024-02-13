@@ -1,7 +1,7 @@
 SHELL    := /bin/bash
 SCRIPTS_DIR  = $(CURDIR)/scripts
 
-.PHONY: help link cmdtool homebrew mac-setup brew pip nvim emacs update
+.PHONY: help link cmdtool homebrew mac-setup brew pip emacs update
 
 cmdtool:
 	@source $(SCRIPTS_DIR)/cmd-line-tool.sh;
@@ -33,9 +33,6 @@ update: brew pip pnpm
 hist:
 	@source $(SCRIPTS_DIR)/hist.sh;
 
-nvim:
-	@source $(SCRIPTS_DIR)/nvim.sh;
-
 emacs:
 	@source $(SCRIPTS_DIR)/emacs.sh;
 
@@ -49,6 +46,5 @@ help::
 	$(info make pip          = install or freeze package according to requirements.txt)
 	$(info make update       = update brew, pip, pnpm package info)
 	$(info make hist         = backup or restore zsh history)
-	$(info make nvim         = bootstrap neovim)
 	$(info make emacs        = bootstrap emacs)
 	@true

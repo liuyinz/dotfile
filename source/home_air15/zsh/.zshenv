@@ -27,7 +27,6 @@ export SAVEHIST=$HISTSIZE
 # PATH
 export PATH=$HOME/.local/usr/bin:$HOME/.local/bin:$PATH
 
-# export EDITOR="nvim"
 export EDITOR="ec"
 export GIT_PAGER="diff-so-fancy | less --tabs=4 -RFX"
 

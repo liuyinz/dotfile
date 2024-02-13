@@ -35,8 +35,8 @@ declare -ar BASE=(
   # ripgrep
   "base/.ripgreprc <- .config/.ripgreprc"
   "base/.rgignore <- .config/.rgignore"
-  # ranger
-  "base/ranger <- .config/ranger"
+  # # ranger
+  # "base/ranger <- .config/ranger"
   # tealdeer
   "base/tealdeer.toml <- .config/tealdeer/config.toml"
   # lazygit
