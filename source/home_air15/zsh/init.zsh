@@ -16,7 +16,6 @@ bindkey -e
 bindkey "^V" clear-screen
 
 #  ------------------ Oh-My-Zsh Installation ----------------------
-[[ -n $HTTP ]] && export ALL_PROXY=http://$HTTP
 
 export ZSH=$HOME/.oh-my-zsh
 
@@ -187,9 +186,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
 # autoupdate
 ZSH_CUSTOM_AUTOUPDATE_QUIET=true
-
-# # fzf-proxy
-# [[ -n $HTTP ]] && export PROXYF_URLS="http://$HTTP,socks://$SOCKS"
 
 command -v pip >/dev/null && _evalcache pip completion --zsh 2>/dev/null
 
