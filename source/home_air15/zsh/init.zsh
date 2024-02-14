@@ -11,11 +11,7 @@ typeset -U PATH
 
 [[ "$ZSH_PROFILER" == "true" ]] && zmodload zsh/zprof
 
-# use emacs-style keybinds
-bindkey -e
-bindkey "^V" clear-screen
-
-#  ------------------ Oh-My-Zsh Installation ----------------------
+#  ---------------------- Oh-My-Zsh Install -----------------------
 
 export ZSH=$HOME/.oh-my-zsh
 
@@ -125,7 +121,6 @@ plugins=(
   urltools
   vscode
   web-search
-  pass
   qrcode
   mise
   ## custom plugins
@@ -165,18 +160,12 @@ plugin_ensure zsh-users/zsh-autosuggestions
 plugin_ensure zsh-users/zsh-completions
 plugin_ensure zdharma-continuum/fast-syntax-highlighting
 
-# ---------------------- Plugin Setting --------------------------
+# ---------------------- Before loading --------------------------
 # mise installation
 command -v mise >/dev/null || curl https://mise.run | sh
 
 # zlua, for emacs use
 export ZLUA_SCRIPT
-
-# evalcache
-ZSH_EVALCACHE_DIR=$ZSH_CACHE_DIR/.zsh-evalcache
-
-# LS_COLORS
-command -v dircolors >/dev/null && _evalcache dircolors -b $ZSH_CUSTOM/plugins/LS_COLORS/LS_COLORS 2>/dev/null
 
 # autosuggestions
 bindkey ",," autosuggest-accept
@@ -187,15 +176,37 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 # autoupdate
 ZSH_CUSTOM_AUTOUPDATE_QUIET=true
 
-command -v pip >/dev/null && _evalcache pip completion --zsh 2>/dev/null
-
-# ----------------------- Oh-my-zsh End ---------------------------
+# ----------------------- Oh-My-Zsh End ---------------------------
 
 source $ZSH/oh-my-zsh.sh
 
-export ALL_PROXY=
+# ----------------------- After loading ---------------------------
+omz_clean() {
+  echo "remove $ZSH_EVALCACHE_DIR ..."
+  rm -f "$ZSH_EVALCACHE_DIR"/init-*.sh
+  echo "remove $ZSH_COMPDUMP ..."
+  rm -f "$ZSH_COMPDUMP"
+}
+
+omz_update() {
+  upgrade_oh_my_zsh_custom
+  omz update
+  omz_clean
+  exec zsh
+}
+
+# evalcache
+ZSH_EVALCACHE_DIR=$ZSH_CACHE_DIR/.zsh-evalcache
+# LS_COLORS
+command -v dircolors >/dev/null && _evalcache dircolors -b $ZSH_CUSTOM/plugins/LS_COLORS/LS_COLORS 2>/dev/null
+# pip
+command -v pip >/dev/null && _evalcache pip completion --zsh 2>/dev/null
 
 #  -------------------------- Options ------------------------------
+
+# use emacs-style keybinds
+bindkey -e
+bindkey "^V" clear-screen
 
 setopt print_exit_value
 setopt PROMPT_SUBST
@@ -214,20 +225,6 @@ zstyle ':completion:*' rehash true
 
 # Keep directories and files separated
 zstyle ':completion:*' list-dirs-first true
-
-omz_clean() {
-  echo "remove $ZSH_EVALCACHE_DIR ..."
-  rm "$ZSH_EVALCACHE_DIR"/init-*.sh 2>dev/null
-  echo "remove $ZSH_COMPDUMP ..."
-  rm "$ZSH_COMPDUMP" 2>dev/null
-}
-
-omz_update() {
-  upgrade_oh_my_zsh_custom
-  omz update
-  omz_clean
-  exec zsh
-}
 
 source ${${(%):-%x}:A:h}/user.sh
 
