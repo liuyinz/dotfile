@@ -100,7 +100,7 @@ declare -ar SYS_mac=(
   
   # MAC app
   # karabiner
-  "mac/karabiner.json <- .config/karabiner/karabiner.json"
+  # "mac/karabiner.json <- .config/karabiner/karabiner.json"
   # alt-tab
   "mac/alt-tab.plist <- Library/Preferences/com.lwouis.alt-tab-macos.plist"
 
