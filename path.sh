@@ -97,12 +97,6 @@ declare -ar SYS_mac=(
 
   # git-cliff
   # "base/cliff.toml <- Library/Application\ Support/git-cliff/cliff.toml"
-  
-  # MAC app
-  # karabiner
-  # "mac/karabiner.json <- .config/karabiner/karabiner.json"
-  # alt-tab
-  "mac/alt-tab.plist <- Library/Preferences/com.lwouis.alt-tab-macos.plist"
 
 )
 
@@ -118,9 +112,6 @@ declare -ar SYS_linux=(
 
 # ---------------------------- WIN --------------------------------
 
-
-
-
 #  -------------------------- machine ------------------------------
 
 declare -ar home_air15=(
@@ -128,7 +119,7 @@ declare -ar home_air15=(
   "home_air15/zsh/.zshenv <- .zshenv"
   "home_air15/zsh/.zsh_history <- $dotcache/.zsh_history"
   "home_air15/zsh/init.zsh <- $dotcache/init.zsh"
-  
+
   # brew
   "home_air15/Brewfile <- $dotcache/Brewfile"
 
