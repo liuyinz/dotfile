@@ -29,20 +29,20 @@ Host *
 Host github.com
   Hostname github.com
   User git
-  ProxyCommand ncat -v --proxy-type http --proxy ${HTTP} %h %p
-
-# # 默认 22 端口，socks5 代理
-# Host github.com
-#   Hostname github.com
-#   User git
-#   ProxyCommand ncat -v --proxy-type socks5 --proxy ${SOCKS} %h %p
+  ProxyCommand socat - PROXY:127.0.0.1:%h:%p,proxyport=7890
 
 # # 443 端口，http 代理
 # Host github.com
 #   Hostname ssh.github.com
 #   Port 443
 #   User git
-#   ProxyCommand ncat -v --proxy-type http --proxy ${HTTP} %h %p
+#   ProxyCommand socat - PROXY:127.0.0.1:%h:%p,proxyport=7890
+
+# # 默认 22 端口，socks5 代理
+# Host github.com
+#   Hostname github.com
+#   User git
+#   ProxyCommand ncat -v --proxy-type socks5 --proxy ${SOCKS} %h %p
 
 # # 443 端口，socks5 代理
 # Host github.com

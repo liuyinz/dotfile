@@ -83,9 +83,6 @@ declare -ar SYS_mac=(
 
   "mac/.gitignore <- .gitignore"
 
-  # ssh
-  "mac/ssh_config <- .ssh/config"
-
   # py
   "mac/requirements.txt <- $dotcache/requirements.txt"
 
@@ -122,5 +119,8 @@ declare -ar home_air15=(
 
   # brew
   "home_air15/Brewfile <- $dotcache/Brewfile"
+
+  # ssh
+  "home_air15/ssh_config <- .ssh/config"
 
 )
