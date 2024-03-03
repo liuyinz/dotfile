@@ -102,6 +102,10 @@ export _ZL_HYPHEN=1
 export _ZL_ROOT_MARKERS=".git,.svn,.hg,.root,package.json"
 # export _ZL_EXCLUDE_DIRS="$DATA_DIR"
 
+## z.lua.plugin.zsh
+export _ZL_ZSH_NO_FZF=0
+export _ZL_NO_ALIASES=1
+
 # fzf
 export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
