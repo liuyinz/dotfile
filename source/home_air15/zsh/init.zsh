@@ -164,17 +164,16 @@ plugin_ensure zdharma-continuum/fast-syntax-highlighting
 # mise installation
 command -v mise >/dev/null || curl https://mise.run | sh
 
-# zlua, for emacs use
-export ZLUA_SCRIPT
-
 # autosuggestions
-bindkey ",," autosuggest-accept
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 ZSH_AUTOSUGGEST_USE_ASYNC=1
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
 # autoupdate
 ZSH_CUSTOM_AUTOUPDATE_QUIET=true
+
+# z.lua
+export ZLUA_EXEC="$(mise which lua 2>/dev/null)"
 
 # ----------------------- Oh-My-Zsh End ---------------------------
 
@@ -201,6 +200,12 @@ ZSH_EVALCACHE_DIR=$ZSH_CACHE_DIR/.zsh-evalcache
 command -v dircolors >/dev/null && _evalcache dircolors -b $ZSH_CUSTOM/plugins/LS_COLORS/LS_COLORS 2>/dev/null
 # pip
 command -v pip >/dev/null && _evalcache pip completion --zsh 2>/dev/null
+
+# zlua, for emacs use
+export ZLUA_SCRIPT
+
+# autosuggestions
+bindkey ",," autosuggest-accept
 
 #  -------------------------- Options ------------------------------
 
