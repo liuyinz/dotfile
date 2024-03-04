@@ -161,6 +161,12 @@ plugin_ensure zsh-users/zsh-completions
 plugin_ensure zdharma-continuum/fast-syntax-highlighting
 
 # ---------------------- Before loading --------------------------
+
+# brew installation
+command -v brew >/dev/null || /bin/bash -c "$(curl -fsSL https://mirrors.ustc.edu.cn/misc/brew-install.sh)"
+# brew completion
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
 # mise installation
 command -v mise >/dev/null || curl https://mise.run | sh
 
