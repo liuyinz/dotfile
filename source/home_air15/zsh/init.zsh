@@ -108,7 +108,7 @@ plugins=(
   # direnv
   encode64
   extract
-  fzf
+  # fzf
   gh
   gitfast
   github
@@ -206,6 +206,9 @@ ZSH_EVALCACHE_DIR=$ZSH_CACHE_DIR/.zsh-evalcache
 command -v dircolors >/dev/null && _evalcache dircolors -b $ZSH_CUSTOM/plugins/LS_COLORS/LS_COLORS 2>/dev/null
 # pip
 command -v pip >/dev/null && _evalcache pip completion --zsh 2>/dev/null
+
+# fzf
+command -v fzf >/dev/null && _evalcache fzf --zsh 2>/dev/null
 
 # zlua, for emacs use
 export ZLUA_SCRIPT
