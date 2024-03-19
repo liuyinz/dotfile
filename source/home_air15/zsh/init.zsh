@@ -128,6 +128,7 @@ plugins=(
   evalcache
   fzf-collection
   z.lua
+  diff-so-fancy
   zsh-completions
   fzf-tab
   zsh-autosuggestions
@@ -153,6 +154,7 @@ plugin_ensure liuyinz/fzf-collection
 plugin_ensure Aloxaf/fzf-tab
 plugin_ensure reegnz/jq-zsh-plugin jq
 plugin_ensure skywind3000/z.lua
+plugin_ensure so-fancy/diff-so-fancy
 plugin_ensure TamCore/autoupdate-oh-my-zsh-plugins autoupdate
 plugin_ensure mroth/evalcache
 plugin_ensure trapd00r/LS_COLORS
