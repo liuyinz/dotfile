@@ -36,9 +36,6 @@ export GIT_PAGER="diff-so-fancy | less --tabs=4 -RFX"
 # export SOCKS_PORT=${SOCKS#*:}
 
 #  --------------------------- Tool -------------------------------
-# emacs lsp-mode
-export LSP_USE_PLISTS=true
-
 # emacs enchant
 export ENCHANT_CONFIG_DIR=$CONFIG_DIR/enchant/
 
