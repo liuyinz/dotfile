@@ -157,7 +157,6 @@ plugin_ensure skywind3000/z.lua
 plugin_ensure so-fancy/diff-so-fancy
 plugin_ensure TamCore/autoupdate-oh-my-zsh-plugins autoupdate
 plugin_ensure mroth/evalcache
-plugin_ensure trapd00r/LS_COLORS
 plugin_ensure zsh-users/zsh-autosuggestions
 plugin_ensure zsh-users/zsh-completions
 plugin_ensure zdharma-continuum/fast-syntax-highlighting
@@ -204,8 +203,7 @@ omz_update() {
 
 # evalcache
 ZSH_EVALCACHE_DIR=$ZSH_CACHE_DIR/.zsh-evalcache
-# LS_COLORS
-command -v dircolors >/dev/null && _evalcache dircolors -b $ZSH_CUSTOM/plugins/LS_COLORS/LS_COLORS 2>/dev/null
+
 # pip
 command -v pip >/dev/null && _evalcache pip completion --zsh 2>/dev/null
 
