@@ -3,11 +3,12 @@ experimental = true
 
 [tools]
 python = "3.11"
-go = "1.22"
-deno = "1.41"
+go = "latest"
+deno = "latest"
 ruby = "3.2"
 node = "21.7.2"
 rust = "1.75"
-bun = "1.0"
+bun = "latest"
 lua = "5.4"
 zig = "latest"
+usage = "latest"
