@@ -1,3 +1,4 @@
+// SEE https://github.com/AlloyTeam/eslint-config-alloy/blob/master/.prettierrc.js
 // .prettierrc.js
 module.exports = {
   // 一行最多 120 字符
@@ -18,8 +19,8 @@ module.exports = {
   trailingComma: 'all',
   // 大括号内的首尾需要空格
   bracketSpacing: true,
-  // jsx 标签的反尖括号需要换行
-  bracketSameLine: false,
+  // jsx 标签的反尖括号不需要换行
+  bracketSameLine: true,
   // 箭头函数，只有一个参数的时候，也需要括号
   arrowParens: 'always',
   // 每个文件格式化的范围是文件的全部内容
