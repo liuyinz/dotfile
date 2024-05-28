@@ -2,13 +2,14 @@
 experimental = true
 
 [tools]
-python = "3.11"
-go = "latest"
-deno = "latest"
-ruby = "3.2"
-node = "21.7.2"
-rust = "1.75"
-bun = "latest"
-lua = "5.4"
-zig = "latest"
-usage = "latest"
+# do not update version of python/node/ruby for installed global tool bin
+python = "3.11.9"
+ruby   = "3.2.4"
+rust   = "1.75.0"
+go     = "latest"
+node   = "latest"
+deno   = "latest"
+bun    = "latest"
+lua    = "latest"
+zig    = "latest"
+usage  = "latest"
