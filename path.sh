@@ -71,6 +71,8 @@ declare -ar BASE=(
   # md
   "base/.mdlrc <- .mdlrc"
   "base/mdl-rule.rb <- mdl-rule.rb"
+  # mise
+  "base/.default-npm-packages <- .default-npm-packages"
 )
 
 # --------------------------- MAC -------------------------------
