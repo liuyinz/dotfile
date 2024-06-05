@@ -41,6 +41,8 @@ declare -ar BASE=(
   "base/tealdeer.toml <- .config/tealdeer/config.toml"
   # lazygit
   "base/lazygit.yml <- .config/lazygit/config.yml"
+  # fzf
+  "base/fzf <- .config/fzf"
   # enchant
   "base/enchant/enchant.ordering <- .config/enchant/enchant.ordering"
   "base/enchant/en_US.dic <- .config/enchant/en_US.dic"
