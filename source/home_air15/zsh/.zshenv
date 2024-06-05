@@ -107,8 +107,8 @@ export _ZL_NO_ALIASES=1
 # fzf
 export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-# export FZF_DEFAULT_OPTS_FILE="$CONFIG_DIR/fzf/city-lights.fzfrc"
-export FZF_DEFAULT_OPTS_FILE="$CONFIG_DIR/fzf/tomorrow-night.fzfrc"
+export FZF_DEFAULT_OPTS_FILE="$CONFIG_DIR/fzf/city-lights.fzfrc"
+# export FZF_DEFAULT_OPTS_FILE="$CONFIG_DIR/fzf/tomorrow-night.fzfrc"
 
 #  --------------------------- mise -------------------------------
 
@@ -133,3 +133,5 @@ export GOPATH=$HOME/Code/go
 export PATH=$GOPATH/bin:$PATH
 export GO111MODULE=on
 export GOPROXY=https://goproxy.cn
+
+export TERM="xterm-256color"
