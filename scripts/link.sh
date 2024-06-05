@@ -84,7 +84,7 @@ create_symlinks() {
         elif [ -e "$source" ] && [ -e "$target" ]; then
 
           if [ "$(readlink "$target")" == "$source" ]; then
-            print_in_grey "   [✔] Same  $info\n"
+            print_in_purple "   [✔] Same  $info\n"
           else
             ask_for_confirmation "\"~/${BASH_REMATCH[2]}\" exists, overwrite it?"
             if answer_is_yes; then
