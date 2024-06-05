@@ -85,7 +85,8 @@ export PROXYCHAINS_CONF_FILE=$CONFIG_DIR/proxychains.conf
 export BAT_CONFIG_PATH=$CONFIG_DIR/bat.conf
 
 # lazygit
-export CONFIG_DIR="$CONFIG_DIR/lazygit"
+# FIXME config dir failed
+export XDG_CONFIG_HOME="$CONFIG_DIR"
 
 # tealdeer
 export TEALDEER_CONFIG_DIR=$CONFIG_DIR/tealdeer
