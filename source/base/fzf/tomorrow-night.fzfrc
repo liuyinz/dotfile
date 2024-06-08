@@ -4,6 +4,7 @@
 --cycle
 --multi
 --sort
+--no-unicode
 --no-scrollbar
 --marker='+ '
 --separator=''
