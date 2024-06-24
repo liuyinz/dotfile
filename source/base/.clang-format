@@ -1,6 +1,7 @@
 # None, Cpp, Java, JavaScript, ObjC, Proto, TableGen, TextProto
 Language: Cpp
 BasedOnStyle: Google
+SeparateDefinitionBlocks: Always
 AlignTrailingComments: false
 AllowShortBlocksOnASingleLine: true
 AllowShortCaseLabelsOnASingleLine: true
@@ -10,12 +11,12 @@ AllowShortLoopsOnASingleLine: false
 CompactNamespaces: true
 Cpp11BracedListStyle: true
 IncludeBlocks: Merge
-IndentWidth: 4
+IndentWidth: 2
 MaxEmptyLinesToKeep: 1
 NamespaceIndentation: All
 SortIncludes: true
 SortUsingDeclarations: true
-Standard: Cpp11
+Standard: c++20
 TabWidth: 4
 UseTab: Never
 PointerAlignment: Left
