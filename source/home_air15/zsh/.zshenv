@@ -135,3 +135,6 @@ export GO111MODULE=on
 export GOPROXY=https://goproxy.cn
 
 export TERM="xterm-256color"
+
+# html
+export HTML_TIDY="$HOME/.tidyrc"

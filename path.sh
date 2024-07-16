@@ -52,6 +52,8 @@ declare -ar BASE=(
   # LANG
   # css, less, scss
   "base/.stylelintrc.json <- .stylelintrc.json"
+  # html
+  "base/.tidyrc <- .tidyrc"
   # js
   "base/.prettierrc.js <- .prettierrc.js"
   # .eslintrc.json: base/.eslintrc.json
