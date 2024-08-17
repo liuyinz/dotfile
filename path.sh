@@ -77,6 +77,8 @@ declare -ar BASE=(
   "base/mdl-rule.rb <- mdl-rule.rb"
   # mise
   "base/.default-npm-packages <- .default-npm-packages"
+  # lua
+  "base/stylua.toml <- .config/stylua.toml"
 )
 
 # --------------------------- MAC -------------------------------
