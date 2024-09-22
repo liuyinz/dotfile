@@ -95,7 +95,10 @@ declare -ar SYS_mac=(
   "mac/requirements.txt <- $dotcache/requirements.txt"
 
   #pnpm
-  "mac/Pnpmfile <- $dotcache/Pnpmfile"
+  # "mac/Pnpmfile <- $dotcache/Pnpmfile"
+
+  #npm
+  "mac/Npmfile <- $dotcache/Npmfile"
 
   # proxychain
   "mac/proxychains.conf <- .config/proxychains.conf"

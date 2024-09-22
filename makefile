@@ -1,7 +1,7 @@
 SHELL    := /bin/bash
 SCRIPTS_DIR  = $(CURDIR)/scripts
 
-.PHONY: help link cmdtool homebrew mac-setup brew pip emacs update
+.PHONY: help link cmdtool homebrew mac-setup brew pip npm emacs update
 
 cmdtool:
 	@source $(SCRIPTS_DIR)/cmd-line-tool.sh;
@@ -27,7 +27,10 @@ pip:
 pnpm:
 	@source $(SCRIPTS_DIR)/pnpm.sh;
 
-update: brew pip pnpm
+npm:
+	@source $(SCRIPTS_DIR)/npm.sh;
+
+update: brew pip npm
 	@echo "Update brew, pip, pnpm...";
 
 hist:
@@ -44,7 +47,8 @@ help::
 	$(info make mac-setup    = check cmd-line-tool, homebrew and shell for MacOS)
 	$(info make brew         = install or dump package according to Brewfile)
 	$(info make pip          = install or freeze package according to requirements.txt)
-	$(info make update       = update brew, pip, pnpm package info)
+	$(info make npm          = install or dump package according to Npmfile)
+	$(info make update       = update brew, pip, npm package info)
 	$(info make hist         = backup or restore zsh history)
 	$(info make emacs        = bootstrap emacs)
 	@true
