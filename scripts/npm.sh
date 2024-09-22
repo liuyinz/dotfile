@@ -19,7 +19,7 @@ npm_install() {
     exit 1
   fi
 
-  cat "$_npm_cache" | xargs npm install --global
+  xargs -n 1 npm install --global <"$_npm_cache"
   print_result $? "npm: install done"
 }
 
