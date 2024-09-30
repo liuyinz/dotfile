@@ -4,12 +4,37 @@ gui:
   scrollHeight: 38 # how many lines you scroll by
   timeFormat: "2006-01-02"
   theme:
-    lightTheme: false
+    # lightTheme: false
+    # selectedLineBgColor:
+    #     - reverse
+    activeBorderColor:
+      - "#b15c00"
+      - "bold"
+    inactiveBorderColor:
+      - "#4094a3"
+    searchingActiveBorderColor:
+      - "#b15c00"
+      - "bold"
+    optionsTextColor:
+      - "#2e7de9"
     selectedLineBgColor:
-        - reverse
+      - "#b7c1e3"
+    cherryPickedCommitFgColor:
+      - "#2e7de9"
+    cherryPickedCommitBgColor:
+      - "#9854f1"
+    markedBaseCommitFgColor:
+      - "#2e7de9"
+    markedBaseCommitBgColor:
+      - "#8c6c3e"
+    unstagedChangesColor:
+      - "#c64343"
+    defaultFgColor:
+      - "#3760bf"
   showRandomTip: false
   showBottomLine: false
   showCommandLog: false
+  
 git:
   branchLogCmd: "git log --color=always --abbrev-commit --date=relative {{branchName}} --"
   allBranchesLogCmd: "git log --all --color=always --abbrev-commit --date=relative"
