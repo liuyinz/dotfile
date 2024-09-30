@@ -83,9 +83,6 @@ export RIPGREP_CONFIG_PATH=$CONFIG_DIR/.ripgreprc
 # proxychains-ng
 export PROXYCHAINS_CONF_FILE=$CONFIG_DIR/proxychains.conf
 
-# bat
-export BAT_CONFIG_PATH=$CONFIG_DIR/bat.conf
-
 # lazygit
 # FIXME config dir failed
 export XDG_CONFIG_HOME="$CONFIG_DIR"

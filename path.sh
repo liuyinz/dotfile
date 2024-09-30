@@ -31,7 +31,7 @@ declare -ar BASE=(
   # htop
   "base/htoprc <- .config/htop/htoprc"
   # bat
-  "base/bat.conf <- .config/bat.conf"
+  "base/bat <- .config/bat"
   # ripgrep
   "base/.ripgreprc <- .config/.ripgreprc"
   "base/.rgignore <- .config/.rgignore"
