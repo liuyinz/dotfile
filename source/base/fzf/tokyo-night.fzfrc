@@ -25,9 +25,9 @@
 --color=bg:#1a1b26
 --color=fg:#a9b1d6:dim
 --color=hl:#73daca:dim:bold
---color=bg+:#1a1b26
---color=fg+:#d8dde6:bold
---color=hl+:#d8dde6:bold
+--color=bg+:#24304a
+--color=fg+:#a9b1d6:underline:bold
+--color=hl+:#a9b1d6:underline:bold
 --color=pointer:#f7768e:bold
 --color=gutter:#1a1b26
 --color=marker:#f7768e:bold
