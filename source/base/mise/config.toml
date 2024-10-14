@@ -1,5 +1,6 @@
 [settings]
 experimental = true
+disable_hints = ["*"]
 
 [tools]
 # do not update version of python/node/ruby for installed global tool bin
@@ -7,7 +8,7 @@ python = "3.11.9"
 ruby   = "3.2.4"
 rust   = "1.75.0"
 go     = "latest"
-node   = "latest"
+node   = "22.9.0"
 deno   = "latest"
 bun    = "latest"
 lua    = "latest"
