@@ -211,6 +211,9 @@ command -v pip >/dev/null && _evalcache pip completion --zsh 2>/dev/null
 # fzf
 command -v fzf >/dev/null && _evalcache fzf --zsh 2>/dev/null
 
+# moon
+command -v moon >/dev/null && _evalcache moon shell-completion --shell zsh 2>/dev/null
+
 # zlua, for emacs use
 export ZLUA_SCRIPT
 

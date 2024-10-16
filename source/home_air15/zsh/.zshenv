@@ -136,3 +136,6 @@ export TERM="xterm-256color"
 
 # html
 export HTML_TIDY="$HOME/.tidyrc"
+
+# moonbit
+export PATH="$HOME/.moon/bin:$PATH"
