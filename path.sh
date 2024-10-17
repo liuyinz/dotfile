@@ -68,7 +68,7 @@ declare -ar BASE=(
   # cpp
   "base/.clang-format <- .clang-format"
   # rust
-  "base/cargo.toml <- .cargo/config"
+  "base/cargo.toml <- .cargo/config.toml"
   ## perl
   # "base/MyConfig.pm <- .cpan/CPAN/MyConfig.pm"
   # "base/.perlcriticrc <- .perlcriticrc"
