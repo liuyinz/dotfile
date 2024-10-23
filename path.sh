@@ -26,6 +26,8 @@ declare -ar BASE=(
   "base/gh.yml <- .config/gh/config.yml"
 
   # TOOL
+  # carbon-now
+  "base/.carbon-now.json <- .carbon-now.json"
   # editorconfig
   "base/.editorconfig <- .editorconfig"
   # htop
