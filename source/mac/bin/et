@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
-source "$(dirname "$(realpath "${BASH_SOURCE[0]}" 2>/dev/null)")/lib/emacsclient.sh"
+# open a new tui frame of emacs to edit files
 
-epipe-ensure-p "$@"
-emacsclient-ensure-p
-# shellcheck disable=SC2086
-emacsclient -q -t ${tmpfile:-$@}
+set -ue
+
+source "$(dirname "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")")/lib/emacsclient.sh"
+
+emacsclient::ensure_running
+emacsclient::open_tui "$@"

@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-source "$(dirname "$(realpath "${BASH_SOURCE[0]}" 2>/dev/null)")/lib/emacsclient.sh"
+# open a new gui frame of emacs to edit files
 
-epipe-ensure-p "$@"
-emacsclient-ensure-p
-# shellcheck disable=SC2086
-emacsclient -q -n -c ${tmpfile:-$@}
-emacsclient -u -e "(select-frame-set-input-focus (selected-frame))"
+set -ue
+
+source "$(dirname "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")")/lib/emacsclient.sh"
+
+emacsclient::ensure_running
+emacsclient -q -n -c
+emacsclient::open_gui "#@"

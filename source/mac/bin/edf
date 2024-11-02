@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
-source "$(dirname "$(realpath "${BASH_SOURCE[0]}" 2>/dev/null)")/lib/emacsclient.sh"
+#
+set -ue
 
-emacsclient-ensure-p
+source "$(dirname "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")")/lib/emacsclient.sh"
+
+emacsclient::ensure_running
 
 case "${#}" in
   1)
