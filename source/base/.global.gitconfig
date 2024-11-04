@@ -89,7 +89,7 @@
 	followTags = True
 
 [pull]
-	rebase = false
+	rebase = true
 
 [status]
 	submoduleSummary = true
