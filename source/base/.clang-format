@@ -1,23 +1,23 @@
 # None, Cpp, Java, JavaScript, ObjC, Proto, TableGen, TextProto
 Language: Cpp
 BasedOnStyle: Google
-SeparateDefinitionBlocks: Always
-AlignTrailingComments: false
-AllowShortBlocksOnASingleLine: true
-AllowShortCaseLabelsOnASingleLine: true
-AllowShortFunctionsOnASingleLine: All
-AllowShortIfStatementsOnASingleLine: true
-AllowShortLoopsOnASingleLine: false
-CompactNamespaces: true
-Cpp11BracedListStyle: true
-IncludeBlocks: Merge
-IndentWidth: 2
-MaxEmptyLinesToKeep: 1
-NamespaceIndentation: All
-SortIncludes: true
-SortUsingDeclarations: true
-Standard: c++20
-TabWidth: 4
-UseTab: Never
-PointerAlignment: Left
-DerivePointerAlignment: false
+# SeparateDefinitionBlocks: Always
+# AlignTrailingComments: false
+# AllowShortBlocksOnASingleLine: true
+# AllowShortCaseLabelsOnASingleLine: true
+# AllowShortFunctionsOnASingleLine: All
+# AllowShortIfStatementsOnASingleLine: true
+# AllowShortLoopsOnASingleLine: false
+# CompactNamespaces: true
+# Cpp11BracedListStyle: true
+# IncludeBlocks: Merge
+# IndentWidth: 2
+# MaxEmptyLinesToKeep: 1
+# NamespaceIndentation: All
+# SortIncludes: true
+# SortUsingDeclarations: true
+# Standard: c++20
+# TabWidth: 4
+# UseTab: Never
+# PointerAlignment: Left
+# DerivePointerAlignment: false
