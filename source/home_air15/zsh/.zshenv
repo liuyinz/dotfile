@@ -110,12 +110,15 @@ export FZF_DEFAULT_OPTS_FILE="$CONFIG_DIR/fzf/tokyo-night.fzfrc"
 
 #  --------------------------- mise -------------------------------
 
-export MISE_GO_SET_GOPATH=false
-
 #  --------------------------- Lang -------------------------------
 
 # ccls
 # export PATH=/opt/homebrew/opt/llvm/bin:$PATH
+
+# clang
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -127,8 +130,8 @@ export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 # export PATH="$PNPM_HOME:$PATH"
 
 # Golang
-export GOPATH=$HOME/Code/go
-export PATH=$GOPATH/bin:$PATH
+# export GOPATH=$HOME/Code/go
+# export PATH=$GOPATH/bin:$PATH
 export GO111MODULE=on
 export GOPROXY=https://goproxy.cn
 
