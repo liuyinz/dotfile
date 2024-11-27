@@ -119,6 +119,7 @@ plugins=(
   sudo
   starship
   urltools
+  uv
   vscode
   web-search
   qrcode
