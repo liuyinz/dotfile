@@ -8,4 +8,4 @@ source "$(dirname "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")")/lib/emacscl
 
 emacsclient::ensure_running
 emacsclient -q -n -c
-emacsclient::open_gui "#@"
+emacsclient::gui_open "#@"

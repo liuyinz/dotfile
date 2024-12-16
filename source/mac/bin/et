@@ -7,4 +7,4 @@ set -ue
 source "$(dirname "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")")/lib/emacsclient.sh"
 
 emacsclient::ensure_running
-emacsclient::open_tui "$@"
+emacsclient::tui_open "$@"

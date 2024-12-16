@@ -30,7 +30,7 @@ emacsclient::gui_frame_length() {
                     (frame-list)))" 2>/dev/null
 }
 
-emacsclient::open_gui() {
+emacsclient::gui_open() {
   emacsclient::pipe_detect "$@"
   if [[ "$#" -eq 0 ]]; then
     emacsclient -u -e "(select-frame-set-input-focus (selected-frame))"
@@ -39,7 +39,11 @@ emacsclient::open_gui() {
   fi
 }
 
-emacsclient::open_tui() {
+emacsclient::tui_open() {
   emacsclient::pipe_detect "$@"
   emacsclient -q -t "${EPIPE:-$@}"
+}
+
+emacsclient::tui_eval() {
+  emacsclient -q -t -e "$@"
 }
